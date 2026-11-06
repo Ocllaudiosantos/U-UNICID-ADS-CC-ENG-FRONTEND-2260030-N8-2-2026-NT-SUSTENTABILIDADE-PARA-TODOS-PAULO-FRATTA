@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notícias - Sustentabilidade para Todos</title>
+
+  <style>
+    /* ---------- Estilo geral ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #634a40;
+    }
+
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background-color: #ffffff;
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+
+    .botao-menu {
+      background: none;
+      border: none;
+      font-size: 48px;
+      cursor: pointer;
+    }
+
+    header h1 {
+      color: #634a40;
+      font-size: 42px;
+    }
+
+    /* ---------- Menu lateral ---------- */
+    .menu-lateral {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 320px;
+      background-color: #ffffff;
+      border-radius: 0 0 16px 0;
+      padding: 20px 25px;
+      display: none;          /* começa escondido */
+      z-index: 10;
+    }
+
+    .menu-lateral.aberto {
+      display: block;         /* aparece quando clica no botão */
+    }
+
+    .menu-lateral a {
+      display: block;
+      padding: 18px 0;
+      color: #222;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    .menu-lateral a:hover {
+      color: #08900a;
+    }
+
+    /* ---------- Faixa verde com o título ---------- */
+    .faixa-verde {
+      background-color: #08900a;
+      padding: 50px 20px;
+    }
+
+    .faixa-titulo {
+      background-color: #634a40;
+      border-radius: 0 80px 80px 0;
+      padding: 40px;
+      text-align: center;
+      margin-right: 35px;
+    }
+
+    .faixa-titulo h2 {
+      color: #3fa9f5;
+      font-size: 34px;
+    }
+
+    .faixa-texto {
+      color: #7a1010;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    /* ---------- Seção de notícias ---------- */
+    .noticias {
+      padding: 60px 20px 80px;
+    }
+
+    .noticias h2 {
+      color: #a8d5a2;
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 50px;
+    }
+
+    .lista-noticias {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #755a4f;
+      width: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card .icone {
+      background-color: #08900a;
+      font-size: 70px;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .card .conteudo {
+      padding: 20px 25px 25px;
+    }
+
+    .card .data {
+      color: #a8d5a2;
+      font-size: 15px;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      font-size: 24px;
+      margin: 8px 0 12px;
+    }
+
+    .card p {
+      color: #f1e8e4;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 25px;
+      color: #634a40;
+    }
+
+    /* ---------- Celular ---------- */
+    @media (max-width: 700px) {
+      header {
+        padding: 0 20px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .menu-lateral {
+        width: 240px;
+      }
+      .faixa-titulo h2 {
+        font-size: 24px;
+      }
+      .noticias h2 {
+        font-size: 34px;
+      }
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+    <h1>🌱 Sustentabilidade para Todos 🌱</h1>
+  </header>
+
+  <!-- Menu lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <a href="noticias.html">📰 Notícias</a>
+    <a href="contato.html">📞 Contato</a>
+    <a href="acessibilidade.html">♿ Acessibilidade</a>
+    <a href="sobre.html">ℹ️ Sobre</a>
+    <a href="dicas.html">💡 Dicas</a>
+    <a href="parceiros.html">🤝 Parceiros</a>
+  </nav>
+
+  <!-- Título da página -->
+  <section class="faixa-verde">
+    <div class="faixa-titulo">
+      <h2>Fique por dentro das novidades</h2>
+    </div>
+    <p class="faixa-texto">
+      Acompanhe as últimas notícias sobre sustentabilidade, meio ambiente e
+      acessibilidade e veja como pequenas atitudes fazem diferença.
+    </p>
+  </section>
+
+  <!-- Notícias -->
+  <section class="noticias">
+    <h2>Últimas notícias</h2>
+
+    <div class="lista-noticias">
+
+      <article class="card">
+        <div class="icone">♻️</div>
+        <div class="conteudo">
+          <span class="data">05/11/2026</span>
+          <h3>Reciclagem cresce nas cidades</h3>
+          <p>Cada vez mais bairros estão adotando a coleta seletiva, ajudando a reduzir o lixo que vai para os aterros.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">💧</div>
+        <div class="conteudo">
+          <span class="data">03/11/2026</span>
+          <h3>Economia de água em casa</h3>
+          <p>Hábitos simples, como fechar a torneira ao escovar os dentes, ajudam a preservar um recurso essencial.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🌳</div>
+        <div class="conteudo">
+          <span class="data">01/11/2026</span>
+          <h3>Projetos de reflorestamento</h3>
+          <p>Iniciativas com a participação da comunidade estão recuperando áreas verdes e protegendo a natureza.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">♿</div>
+        <div class="conteudo">
+          <span class="data">29/10/2026</span>
+          <h3>Acessibilidade em espaços públicos</h3>
+          <p>Praças e prédios estão sendo adaptados para que todas as pessoas possam usar os espaços com segurança.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">☀️</div>
+        <div class="conteudo">
+          <span class="data">27/10/2026</span>
+          <h3>Energia solar mais acessível</h3>
+          <p>O uso de painéis solares vem crescendo e ajuda famílias a economizar na conta de luz.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🛍️</div>
+        <div class="conteudo">
+          <span class="data">25/10/2026</span>
+          <h3>Sacolas reutilizáveis ganham força</h3>
+          <p>Comércios incentivam o uso de sacolas retornáveis para diminuir o consumo de plástico.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <!-- Script do menu -->
+  <script>
+    const botaoMenu = document.getElementById("botaoMenu");
+    const menuLateral = document.getElementById("menuLateral");
+
+    // Abre e fecha o menu ao clicar no botão ☰
+    botaoMenu.addEventListener("click", function () {
+      menuLateral.classList.toggle("aberto");
+    });
+  </script>
+
+</body>
+</html>
