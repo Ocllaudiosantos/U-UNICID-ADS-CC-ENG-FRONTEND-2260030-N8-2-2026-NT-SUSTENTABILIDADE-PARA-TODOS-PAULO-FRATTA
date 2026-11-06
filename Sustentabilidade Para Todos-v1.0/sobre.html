@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Sustentabilidade para Todos</title>
+
+  <style>
+    /* ---------- Estilo geral ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #634a40;
+    }
+
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background-color: #ffffff;
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+
+    .botao-menu {
+      background: none;
+      border: none;
+      font-size: 48px;
+      cursor: pointer;
+    }
+
+    header h1 {
+      color: #634a40;
+      font-size: 42px;
+    }
+
+    /* ---------- Menu lateral ---------- */
+    .menu-lateral {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 320px;
+      background-color: #ffffff;
+      border-radius: 0 0 16px 0;
+      padding: 20px 25px;
+      display: none;          /* começa escondido */
+      z-index: 10;
+    }
+
+    .menu-lateral.aberto {
+      display: block;         /* aparece quando clica no botão */
+    }
+
+    .menu-lateral a {
+      display: block;
+      padding: 18px 0;
+      color: #222;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    .menu-lateral a:hover {
+      color: #08900a;
+    }
+
+    /* ---------- Faixa verde com o título ---------- */
+    .faixa-verde {
+      background-color: #08900a;
+      padding: 50px 20px;
+    }
+
+    .faixa-titulo {
+      background-color: #634a40;
+      border-radius: 0 80px 80px 0;
+      padding: 40px;
+      text-align: center;
+      margin-right: 35px;
+    }
+
+    .faixa-titulo h2 {
+      color: #3fa9f5;
+      font-size: 34px;
+    }
+
+    .faixa-texto {
+      color: #7a1010;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    /* ---------- Nossa história ---------- */
+    .historia {
+      padding: 60px 20px 0;
+    }
+
+    .historia h2,
+    .valores h2 {
+      color: #a8d5a2;
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 40px;
+    }
+
+    .card-historia {
+      background-color: #755a4f;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      padding: 35px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-historia p {
+      color: #f1e8e4;
+      font-size: 20px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    .card-historia p:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-historia strong {
+      color: #a8d5a2;
+    }
+
+    /* ---------- Missão, visão e valores ---------- */
+    .valores {
+      padding: 60px 20px 40px;
+    }
+
+    .lista-valores {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #755a4f;
+      width: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card .icone {
+      background-color: #08900a;
+      font-size: 70px;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .card .conteudo {
+      padding: 20px 25px 25px;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #f1e8e4;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* ---------- Chamada final ---------- */
+    .chamada {
+      text-align: center;
+      padding: 20px 20px 80px;
+    }
+
+    .chamada p {
+      color: #a8d5a2;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 25px;
+    }
+
+    .botao-chamada {
+      display: inline-block;
+      background-color: #08900a;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 14px 30px;
+      font-size: 19px;
+    }
+
+    .botao-chamada:hover {
+      background-color: #067308;
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 25px;
+      color: #634a40;
+    }
+
+    /* ---------- Celular ---------- */
+    @media (max-width: 700px) {
+      header {
+        padding: 0 20px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .menu-lateral {
+        width: 240px;
+      }
+      .faixa-titulo h2 {
+        font-size: 24px;
+      }
+      .historia h2,
+      .valores h2 {
+        font-size: 34px;
+      }
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+    <h1>🌱 Sustentabilidade para Todos 🌱</h1>
+  </header>
+
+  <!-- Menu lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <a href="index.html">🏠 Início</a>
+    <a href="noticias.html">📰 Notícias</a>
+    <a href="contato.html">📞 Contato</a>
+    <a href="acessibilidade.html">♿ Acessibilidade</a>
+    <a href="sobre.html">ℹ️ Sobre</a>
+    <a href="dicas.html">💡 Dicas</a>
+    <a href="parceiros.html">🤝 Parceiros</a>
+    <a href="plastico.html">🧴 Plástico</a>
+    <a href="agua.html">💧 Água</a>
+    <a href="energia.html">⚡ Energia</a>
+  </nav>
+
+  <!-- Título da página -->
+  <section class="faixa-verde">
+    <div class="faixa-titulo">
+      <h2>Prazer, somos o Sustentabilidade para Todos</h2>
+    </div>
+    <p class="faixa-texto">
+      Um projeto que acredita que cuidar do planeta e das pessoas
+      não é coisa de especialista: é coisa de todo mundo.
+    </p>
+  </section>
+
+  <!-- Nossa história -->
+  <section class="historia">
+    <h2>Quem somos</h2>
+
+    <div class="card-historia">
+      <p>
+        O <strong>Sustentabilidade para Todos</strong> nasceu de uma ideia simples:
+        muita gente quer ajudar o meio ambiente, mas não sabe por onde começar.
+        Às vezes parece que é preciso mudar a vida inteira, e não é.
+      </p>
+      <p>
+        Por isso, criamos um espaço com informação clara e sem complicação,
+        mostrando que fechar a torneira, separar o lixo ou levar a própria
+        sacola já faz diferença. <strong>Pequena ação, grande impacto.</strong>
+      </p>
+      <p>
+        E, para nós, sustentabilidade também é sobre gente. Um mundo melhor
+        precisa ser inclusivo e acessível, onde todas as pessoas possam
+        participar, aprender e contribuir.
+      </p>
+    </div>
+  </section>
+
+  <!-- Missão, visão e valores -->
+  <section class="valores">
+    <h2>No que acreditamos</h2>
+
+    <div class="lista-valores">
+
+      <article class="card">
+        <div class="icone">🎯</div>
+        <div class="conteudo">
+          <h3>Nossa missão</h3>
+          <p>Levar informação simples sobre sustentabilidade e acessibilidade, incentivando atitudes do dia a dia que ajudam o planeta e as pessoas.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🌍</div>
+        <div class="conteudo">
+          <h3>Nossa visão</h3>
+          <p>Ver uma comunidade mais consciente, onde cuidar do meio ambiente e incluir todo mundo seja algo natural, e não exceção.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🤝</div>
+        <div class="conteudo">
+          <h3>Nossos valores</h3>
+          <p>Respeito pela natureza, inclusão, empatia, colaboração e a certeza de que cada pessoa pode fazer a sua parte.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Chamada final -->
+  <section class="chamada">
+    <p>Quer fazer parte disso com a gente? 🌱</p>
+    <a class="botao-chamada" href="contato.html">Fale com a gente</a>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <!-- Script do menu -->
+  <script>
+    const botaoMenu = document.getElementById("botaoMenu");
+    const menuLateral = document.getElementById("menuLateral");
+
+    // Abre e fecha o menu ao clicar no botão ☰
+    botaoMenu.addEventListener("click", function () {
+      menuLateral.classList.toggle("aberto");
+    });
+  </script>
+
+</body>
+</html>
