@@ -1,0 +1,13 @@
+{
+  "name": "sustentabilidade-para-todos",
+  "private": true,
+  "version": "0.2.0",
+  "description": "Site estático servido na PORT do Railway",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
