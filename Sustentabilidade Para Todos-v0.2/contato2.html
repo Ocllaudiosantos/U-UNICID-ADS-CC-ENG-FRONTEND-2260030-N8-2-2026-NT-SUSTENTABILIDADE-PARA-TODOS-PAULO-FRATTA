@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Sustentabilidade para Todos</title>
+
+  <style>
+    /* ---------- Estilo geral ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #634a40;
+    }
+
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background-color: #ffffff;
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+
+    .botao-menu {
+      background: none;
+      border: none;
+      font-size: 48px;
+      cursor: pointer;
+    }
+
+    header h1 {
+      color: #634a40;
+      font-size: 42px;
+    }
+
+    /* ---------- Menu lateral ---------- */
+    .menu-lateral {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 320px;
+      background-color: #ffffff;
+      border-radius: 0 0 16px 0;
+      padding: 20px 25px;
+      display: none;          /* começa escondido */
+      z-index: 10;
+    }
+
+    .menu-lateral.aberto {
+      display: block;         /* aparece quando clica no botão */
+    }
+
+    .menu-lateral a {
+      display: block;
+      padding: 18px 0;
+      color: #222;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    .menu-lateral a:hover {
+      color: #08900a;
+    }
+
+    /* ---------- Faixa verde com o título ---------- */
+    .faixa-verde {
+      background-color: #08900a;
+      padding: 50px 20px;
+    }
+
+    .faixa-titulo {
+      background-color: #634a40;
+      border-radius: 0 80px 80px 0;
+      padding: 40px;
+      text-align: center;
+      margin-right: 35px;
+    }
+
+    .faixa-titulo h2 {
+      color: #3fa9f5;
+      font-size: 34px;
+    }
+
+    .faixa-texto {
+      color: #7a1010;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    /* ---------- Seção de contato ---------- */
+    .contato {
+      padding: 60px 20px 80px;
+    }
+
+    .contato h2 {
+      color: #a8d5a2;
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 50px;
+    }
+
+    .contato-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #755a4f;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Card das informações de contato */
+    .card-info {
+      width: 380px;
+    }
+
+    .card-info h3,
+    .card-form h3 {
+      color: #ffffff;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .info-item {
+      color: #f1e8e4;
+      font-size: 19px;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .info-item strong {
+      color: #a8d5a2;
+    }
+
+    /* Card do formulário */
+    .card-form {
+      width: 600px;
+    }
+
+    .card-form label {
+      display: block;
+      color: #f1e8e4;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .card-form input,
+    .card-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-family: "Times New Roman", serif;
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .card-form textarea {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    .card-form button {
+      background-color: #08900a;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 30px;
+      font-size: 19px;
+      font-family: "Times New Roman", serif;
+      cursor: pointer;
+    }
+
+    .card-form button:hover {
+      background-color: #067308;
+    }
+
+    /* Mensagem de sucesso depois de enviar */
+    .mensagem-sucesso {
+      display: none;
+      color: #a8d5a2;
+      font-size: 20px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 25px;
+      color: #634a40;
+    }
+
+    /* ---------- Celular ---------- */
+    @media (max-width: 700px) {
+      header {
+        padding: 0 20px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .menu-lateral {
+        width: 240px;
+      }
+      .faixa-titulo h2 {
+        font-size: 24px;
+      }
+      .contato h2 {
+        font-size: 34px;
+      }
+      .card-info,
+      .card-form {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+    <h1>🌱 Sustentabilidade para Todos 🌱</h1>
+  </header>
+
+  <!-- Menu lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <a href="noticias.html">📰 Notícias</a>
+    <a href="contato.html">📞 Contato</a>
+    <a href="acessibilidade.html">♿ Acessibilidade</a>
+    <a href="sobre.html">ℹ️ Sobre</a>
+    <a href="dicas.html">💡 Dicas</a>
+    <a href="parceiros.html">🤝 Parceiros</a>
+  </nav>
+
+  <!-- Título da página -->
+  <section class="faixa-verde">
+    <div class="faixa-titulo">
+      <h2>Fale com a gente</h2>
+    </div>
+    <p class="faixa-texto">
+      Tem alguma dúvida, sugestão ou quer participar do projeto?
+      Envie uma mensagem, vamos adorar ouvir você!
+    </p>
+  </section>
+
+  <!-- Contato -->
+  <section class="contato">
+    <h2>Entre em contato</h2>
+
+    <div class="contato-container">
+
+      <!-- Informações -->
+      <div class="card card-info">
+        <h3>Nossos canais</h3>
+
+        <p class="info-item">
+          <strong>📧 E-mail:</strong><br>
+          contato@sustentabilidadeparatodos.com
+        </p>
+
+        <p class="info-item">
+          <strong>📞 Telefone:</strong><br>
+          (11) 99999-9999
+        </p>
+
+        <p class="info-item">
+          <strong>📍 Localização:</strong><br>
+          São Paulo - SP
+        </p>
+
+        <p class="info-item">
+          <strong>🕒 Atendimento:</strong><br>
+          Segunda a sexta, das 9h às 18h
+        </p>
+      </div>
+
+      <!-- Formulário -->
+      <div class="card card-form">
+        <h3>Envie sua mensagem</h3>
+
+        <form id="formContato">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" placeholder="Seu nome" required>
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+
+          <label for="assunto">Assunto</label>
+          <input type="text" id="assunto" placeholder="Sobre o que você quer falar?" required>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+
+          <button type="submit">Enviar mensagem</button>
+        </form>
+
+        <p class="mensagem-sucesso" id="mensagemSucesso">
+          ✅ Mensagem enviada com sucesso! Obrigado pelo contato.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const botaoMenu = document.getElementById("botaoMenu");
+    const menuLateral = document.getElementById("menuLateral");
+
+    // Abre e fecha o menu ao clicar no botão ☰
+    botaoMenu.addEventListener("click", function () {
+      menuLateral.classList.toggle("aberto");
+    });
+
+    // Formulário de contato
+    const formContato = document.getElementById("formContato");
+    const mensagemSucesso = document.getElementById("mensagemSucesso");
+
+    formContato.addEventListener("submit", function (evento) {
+      evento.preventDefault();              // evita recarregar a página
+      mensagemSucesso.style.display = "block";
+      formContato.reset();                  // limpa os campos
+    });
+  </script>
+
+</body>
+</html>

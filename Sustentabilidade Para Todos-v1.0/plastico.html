@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plástico - Sustentabilidade para Todos</title>
+
+  <style>
+    /* ---------- Estilo geral ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #634a40;
+    }
+
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background-color: #ffffff;
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+
+    .botao-menu {
+      background: none;
+      border: none;
+      font-size: 48px;
+      cursor: pointer;
+    }
+
+    header h1 {
+      color: #634a40;
+      font-size: 42px;
+    }
+
+    /* ---------- Menu lateral ---------- */
+    .menu-lateral {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 320px;
+      background-color: #ffffff;
+      border-radius: 0 0 16px 0;
+      padding: 20px 25px;
+      display: none;          /* começa escondido */
+      z-index: 10;
+    }
+
+    .menu-lateral.aberto {
+      display: block;         /* aparece quando clica no botão */
+    }
+
+    .menu-lateral a {
+      display: block;
+      padding: 18px 0;
+      color: #222;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    .menu-lateral a:hover {
+      color: #08900a;
+    }
+
+    /* ---------- Faixa verde com o título ---------- */
+    .faixa-verde {
+      background-color: #08900a;
+      padding: 50px 20px;
+    }
+
+    .faixa-titulo {
+      background-color: #634a40;
+      border-radius: 0 80px 80px 0;
+      padding: 40px;
+      text-align: center;
+      margin-right: 35px;
+    }
+
+    .faixa-titulo h2 {
+      color: #3fa9f5;
+      font-size: 34px;
+    }
+
+    .faixa-texto {
+      color: #7a1010;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    /* ---------- Seções e títulos ---------- */
+    .secao {
+      padding: 60px 20px 0;
+    }
+
+    .secao:last-of-type {
+      padding-bottom: 80px;
+    }
+
+    .secao h2 {
+      color: #a8d5a2;
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 50px;
+    }
+
+    /* ---------- Cards ---------- */
+    .lista-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #755a4f;
+      width: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card .icone {
+      background-color: #08900a;
+      font-size: 70px;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .card .conteudo {
+      padding: 20px 25px 25px;
+    }
+
+    .card .etiqueta {
+      color: #a8d5a2;
+      font-size: 15px;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      font-size: 24px;
+      margin: 8px 0 12px;
+    }
+
+    .card p {
+      color: #f1e8e4;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* ---------- Caixa de destaque (largura única, centralizada) ---------- */
+    .caixa {
+      background-color: #755a4f;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .caixa h3 {
+      color: #ffffff;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .caixa p {
+      color: #f1e8e4;
+      font-size: 19px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .caixa .resultado {
+      color: #a8d5a2;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 20px 0 0;
+    }
+
+    .caixa img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .botao {
+      display: inline-block;
+      background-color: #08900a;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 30px;
+      font-size: 19px;
+      font-family: "Times New Roman", serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .botao:hover {
+      background-color: #067308;
+    }
+
+    .caixa select,
+    .caixa input[type="number"] {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-family: "Times New Roman", serif;
+      font-size: 18px;
+      margin: 0 10px 15px;
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 25px;
+      color: #634a40;
+    }
+
+    /* ---------- Celular ---------- */
+    @media (max-width: 700px) {
+      header {
+        padding: 0 20px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .menu-lateral {
+        width: 240px;
+      }
+      .faixa-titulo h2 {
+        font-size: 24px;
+      }
+      .secao h2 {
+        font-size: 34px;
+      }
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+    <h1>🌱 Sustentabilidade para Todos 🌱</h1>
+  </header>
+
+  <!-- Menu lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <a href="index.html">🏠 Início</a>
+    <a href="noticias.html">📰 Notícias</a>
+    <a href="contato.html">📞 Contato</a>
+    <a href="acessibilidade.html">♿ Acessibilidade</a>
+    <a href="sobre.html">ℹ️ Sobre</a>
+    <a href="dicas.html">💡 Dicas</a>
+    <a href="parceiros.html">🤝 Parceiros</a>
+    <a href="plastico.html">🧴 Plástico</a>
+    <a href="agua.html">💧 Água</a>
+    <a href="energia.html">⚡ Energia</a>
+  </nav>
+
+  <!-- Título da página -->
+  <section class="faixa-verde">
+    <div class="faixa-titulo">
+      <h2>Plástico: dá pra usar menos</h2>
+    </div>
+    <p class="faixa-texto">
+      O plástico está em quase tudo ao nosso redor. Ele é útil, mas quando vai parar no lugar errado demora centenas de anos para sumir da natureza.
+    </p>
+  </section>
+
+  <section class="secao">
+    <div class="caixa">
+      <img src="imagem/reciclagem.jpeg" alt="Materiais separados para reciclagem">
+      <h3>Por que isso importa?</h3>
+      <p>
+        Boa parte do plástico que usamos é descartada depois de um único uso.
+        Quando não é reciclado, ele entope bueiros, polui rios e mares e
+        acaba prejudicando os animais. A boa notícia: pequenas mudanças já ajudam muito.
+      </p>
+    </div>
+  </section>
+
+  <section class="secao">
+    <h2>Como reduzir no dia a dia</h2>
+
+    <div class="lista-cards">
+
+      <article class="card">
+        <div class="icone">🧴</div>
+        <div class="conteudo">
+          <h3>Prefira refil</h3>
+          <p>Sabonete, detergente e amaciante em refil usam bem menos plástico do que comprar a embalagem nova toda vez.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🥤</div>
+        <div class="conteudo">
+          <h3>Garrafinha e copo seus</h3>
+          <p>Ter sua própria garrafinha e caneca evita dezenas de copos descartáveis por mês.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🛍️</div>
+        <div class="conteudo">
+          <h3>Sacola de pano</h3>
+          <p>Deixe uma sacola retornável sempre na bolsa ou no carro e dispense a sacolinha do mercado.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🍴</div>
+        <div class="conteudo">
+          <h3>Diga não aos descartáveis</h3>
+          <p>Pediu delivery e vai comer em casa? Avise que não precisa de talher e canudo de plástico.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🧼</div>
+        <div class="conteudo">
+          <h3>Lave antes de descartar</h3>
+          <p>Uma enxaguada rápida na embalagem ajuda muito quem trabalha na reciclagem.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🔁</div>
+        <div class="conteudo">
+          <h3>Reaproveite</h3>
+          <p>Potes e garrafas podem virar vaso de planta, organizador ou porta-lápis antes de ir para o lixo.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+  <section class="secao">
+    <h2>Onde eu jogo isso?</h2>
+
+    <div class="caixa">
+      <p>Escolha um item e descubra o destino certo:</p>
+
+      <select id="itemDescarte">
+        <option value="">-- escolha um item --</option>
+        <option value="reciclavel">Garrafa PET</option>
+        <option value="reciclavel">Pote de margarina</option>
+        <option value="reciclavel">Embalagem de produto de limpeza</option>
+        <option value="reciclavel">Sacola plástica</option>
+        <option value="comum">Embalagem de salgadinho (metalizada)</option>
+        <option value="comum">Plástico muito sujo de comida</option>
+        <option value="especial">Pilhas e baterias</option>
+        <option value="especial">Óleo de cozinha usado</option>
+      </select>
+
+      <p class="resultado" id="resultadoDescarte"></p>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const botaoMenu = document.getElementById("botaoMenu");
+    const menuLateral = document.getElementById("menuLateral");
+
+    // Abre e fecha o menu ao clicar no botão ☰
+    botaoMenu.addEventListener("click", function () {
+      menuLateral.classList.toggle("aberto");
+    });
+
+    // "Onde eu jogo isso?" — mostra o destino do item escolhido
+    const respostas = {
+      reciclavel: "♻️ Lixo reciclável! Dê uma enxaguada e coloque na lixeira de plástico (vermelha).",
+      comum: "🗑️ Esse vai no lixo comum. Na maioria das cidades ele ainda não é reciclado.",
+      especial: "⚠️ Esse precisa de descarte especial! Leve a um ponto de coleta, muitos mercados recebem."
+    };
+
+    const itemDescarte = document.getElementById("itemDescarte");
+    const resultadoDescarte = document.getElementById("resultadoDescarte");
+
+    itemDescarte.addEventListener("change", function () {
+      resultadoDescarte.textContent = respostas[itemDescarte.value] || "";
+    });
+  </script>
+
+</body>
+</html>

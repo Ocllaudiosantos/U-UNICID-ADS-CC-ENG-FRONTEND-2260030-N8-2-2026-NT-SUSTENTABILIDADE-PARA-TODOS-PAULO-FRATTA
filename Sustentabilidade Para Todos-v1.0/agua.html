@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Água - Sustentabilidade para Todos</title>
+
+  <style>
+    /* ---------- Estilo geral ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #634a40;
+    }
+
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background-color: #ffffff;
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+
+    .botao-menu {
+      background: none;
+      border: none;
+      font-size: 48px;
+      cursor: pointer;
+    }
+
+    header h1 {
+      color: #634a40;
+      font-size: 42px;
+    }
+
+    /* ---------- Menu lateral ---------- */
+    .menu-lateral {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 320px;
+      background-color: #ffffff;
+      border-radius: 0 0 16px 0;
+      padding: 20px 25px;
+      display: none;          /* começa escondido */
+      z-index: 10;
+    }
+
+    .menu-lateral.aberto {
+      display: block;         /* aparece quando clica no botão */
+    }
+
+    .menu-lateral a {
+      display: block;
+      padding: 18px 0;
+      color: #222;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    .menu-lateral a:hover {
+      color: #08900a;
+    }
+
+    /* ---------- Faixa verde com o título ---------- */
+    .faixa-verde {
+      background-color: #08900a;
+      padding: 50px 20px;
+    }
+
+    .faixa-titulo {
+      background-color: #634a40;
+      border-radius: 0 80px 80px 0;
+      padding: 40px;
+      text-align: center;
+      margin-right: 35px;
+    }
+
+    .faixa-titulo h2 {
+      color: #3fa9f5;
+      font-size: 34px;
+    }
+
+    .faixa-texto {
+      color: #7a1010;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    /* ---------- Seções e títulos ---------- */
+    .secao {
+      padding: 60px 20px 0;
+    }
+
+    .secao:last-of-type {
+      padding-bottom: 80px;
+    }
+
+    .secao h2 {
+      color: #a8d5a2;
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 50px;
+    }
+
+    /* ---------- Cards ---------- */
+    .lista-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #755a4f;
+      width: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card .icone {
+      background-color: #08900a;
+      font-size: 70px;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .card .conteudo {
+      padding: 20px 25px 25px;
+    }
+
+    .card .etiqueta {
+      color: #a8d5a2;
+      font-size: 15px;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      font-size: 24px;
+      margin: 8px 0 12px;
+    }
+
+    .card p {
+      color: #f1e8e4;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* ---------- Caixa de destaque (largura única, centralizada) ---------- */
+    .caixa {
+      background-color: #755a4f;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .caixa h3 {
+      color: #ffffff;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .caixa p {
+      color: #f1e8e4;
+      font-size: 19px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .caixa .resultado {
+      color: #a8d5a2;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 20px 0 0;
+    }
+
+    .caixa img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .botao {
+      display: inline-block;
+      background-color: #08900a;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 30px;
+      font-size: 19px;
+      font-family: "Times New Roman", serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .botao:hover {
+      background-color: #067308;
+    }
+
+    .caixa select,
+    .caixa input[type="number"] {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-family: "Times New Roman", serif;
+      font-size: 18px;
+      margin: 0 10px 15px;
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 25px;
+      color: #634a40;
+    }
+
+    /* ---------- Celular ---------- */
+    @media (max-width: 700px) {
+      header {
+        padding: 0 20px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .menu-lateral {
+        width: 240px;
+      }
+      .faixa-titulo h2 {
+        font-size: 24px;
+      }
+      .secao h2 {
+        font-size: 34px;
+      }
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+    <h1>🌱 Sustentabilidade para Todos 🌱</h1>
+  </header>
+
+  <!-- Menu lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <a href="index.html">🏠 Início</a>
+    <a href="noticias.html">📰 Notícias</a>
+    <a href="contato.html">📞 Contato</a>
+    <a href="acessibilidade.html">♿ Acessibilidade</a>
+    <a href="sobre.html">ℹ️ Sobre</a>
+    <a href="dicas.html">💡 Dicas</a>
+    <a href="parceiros.html">🤝 Parceiros</a>
+    <a href="plastico.html">🧴 Plástico</a>
+    <a href="agua.html">💧 Água</a>
+    <a href="energia.html">⚡ Energia</a>
+  </nav>
+
+  <!-- Título da página -->
+  <section class="faixa-verde">
+    <div class="faixa-titulo">
+      <h2>Cada gota conta</h2>
+    </div>
+    <p class="faixa-texto">
+      A água parece infinita quando sai da torneira, mas não é. Cuidar dela é cuidar da gente, da nossa casa e do nosso bolso.
+    </p>
+  </section>
+
+  <section class="secao">
+    <div class="caixa">
+      <img src="imagem/agua.jpg" alt="Água limpa sendo preservada">
+      <h3>Quanto você gasta no banho?</h3>
+      <p>Coloque quantos minutos dura o seu banho e veja uma estimativa:</p>
+
+      <input type="number" id="minutosBanho" min="1" max="60" value="15" aria-label="Minutos de banho">
+      <button class="botao" id="botaoCalcular">Calcular</button>
+
+      <p class="resultado" id="resultadoBanho"></p>
+    </div>
+  </section>
+
+  <section class="secao">
+    <h2>Jeitos simples de economizar</h2>
+
+    <div class="lista-cards">
+
+      <article class="card">
+        <div class="icone">🚿</div>
+        <div class="conteudo">
+          <span class="etiqueta">No banheiro</span>
+          <h3>Banho de 5 minutos</h3>
+          <p>Desligue o chuveiro enquanto se ensaboa. Dá para tomar um banho gostoso gastando bem menos.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🪥</div>
+        <div class="conteudo">
+          <span class="etiqueta">No banheiro</span>
+          <h3>Torneira fechada</h3>
+          <p>Ao escovar os dentes ou fazer a barba, abra a torneira só na hora de enxaguar.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🍽️</div>
+        <div class="conteudo">
+          <span class="etiqueta">Na cozinha</span>
+          <h3>Louça de uma vez</h3>
+          <p>Ensaboe toda a louça com a torneira fechada e depois enxágue tudo junto.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">👕</div>
+        <div class="conteudo">
+          <span class="etiqueta">Na lavanderia</span>
+          <h3>Máquina cheia</h3>
+          <p>Junte bastante roupa antes de ligar a máquina. E reaproveite a água do enxágue para lavar o quintal.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🧹</div>
+        <div class="conteudo">
+          <span class="etiqueta">No quintal</span>
+          <h3>Vassoura no lugar da mangueira</h3>
+          <p>Calçada se limpa com vassoura. A mangueira gasta muita água em poucos minutos.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🔧</div>
+        <div class="conteudo">
+          <span class="etiqueta">Em casa toda</span>
+          <h3>Fique de olho nos vazamentos</h3>
+          <p>Uma torneira pingando parece pouco, mas ao longo do mês desperdiça muita água. Conserte assim que notar.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const botaoMenu = document.getElementById("botaoMenu");
+    const menuLateral = document.getElementById("menuLateral");
+
+    // Abre e fecha o menu ao clicar no botão ☰
+    botaoMenu.addEventListener("click", function () {
+      menuLateral.classList.toggle("aberto");
+    });
+
+    // Estimativa de água no banho
+    // Um chuveiro elétrico gasta, em média, cerca de 9 litros por minuto
+    const LITROS_POR_MINUTO = 9;
+
+    document.getElementById("botaoCalcular").addEventListener("click", function () {
+      const minutos = Number(document.getElementById("minutosBanho").value);
+      const resultado = document.getElementById("resultadoBanho");
+
+      if (minutos <= 0) {
+        resultado.textContent = "Digite um número de minutos maior que zero.";
+        return;
+      }
+
+      const litros = minutos * LITROS_POR_MINUTO;
+      const economia = minutos > 5 ? (minutos - 5) * LITROS_POR_MINUTO : 0;
+
+      if (economia > 0) {
+        resultado.textContent = "💧 Cerca de " + litros + " litros por banho. Se baixar para 5 minutos, você economiza uns " + economia + " litros!";
+      } else {
+        resultado.textContent = "💧 Cerca de " + litros + " litros por banho. Parabéns, você já toma um banho econômico!";
+      }
+    });
+  </script>
+
+</body>
+</html>

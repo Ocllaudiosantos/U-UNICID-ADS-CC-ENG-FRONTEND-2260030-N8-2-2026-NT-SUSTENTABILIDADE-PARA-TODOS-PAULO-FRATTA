@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energia - Sustentabilidade para Todos</title>
+
+  <style>
+    /* ---------- Estilo geral ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #634a40;
+    }
+
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background-color: #ffffff;
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+
+    .botao-menu {
+      background: none;
+      border: none;
+      font-size: 48px;
+      cursor: pointer;
+    }
+
+    header h1 {
+      color: #634a40;
+      font-size: 42px;
+    }
+
+    /* ---------- Menu lateral ---------- */
+    .menu-lateral {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 320px;
+      background-color: #ffffff;
+      border-radius: 0 0 16px 0;
+      padding: 20px 25px;
+      display: none;          /* começa escondido */
+      z-index: 10;
+    }
+
+    .menu-lateral.aberto {
+      display: block;         /* aparece quando clica no botão */
+    }
+
+    .menu-lateral a {
+      display: block;
+      padding: 18px 0;
+      color: #222;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    .menu-lateral a:hover {
+      color: #08900a;
+    }
+
+    /* ---------- Faixa verde com o título ---------- */
+    .faixa-verde {
+      background-color: #08900a;
+      padding: 50px 20px;
+    }
+
+    .faixa-titulo {
+      background-color: #634a40;
+      border-radius: 0 80px 80px 0;
+      padding: 40px;
+      text-align: center;
+      margin-right: 35px;
+    }
+
+    .faixa-titulo h2 {
+      color: #3fa9f5;
+      font-size: 34px;
+    }
+
+    .faixa-texto {
+      color: #7a1010;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    /* ---------- Seções e títulos ---------- */
+    .secao {
+      padding: 60px 20px 0;
+    }
+
+    .secao:last-of-type {
+      padding-bottom: 80px;
+    }
+
+    .secao h2 {
+      color: #a8d5a2;
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 50px;
+    }
+
+    /* ---------- Cards ---------- */
+    .lista-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #755a4f;
+      width: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card .icone {
+      background-color: #08900a;
+      font-size: 70px;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .card .conteudo {
+      padding: 20px 25px 25px;
+    }
+
+    .card .etiqueta {
+      color: #a8d5a2;
+      font-size: 15px;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      font-size: 24px;
+      margin: 8px 0 12px;
+    }
+
+    .card p {
+      color: #f1e8e4;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* ---------- Caixa de destaque (largura única, centralizada) ---------- */
+    .caixa {
+      background-color: #755a4f;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .caixa h3 {
+      color: #ffffff;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .caixa p {
+      color: #f1e8e4;
+      font-size: 19px;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .caixa .resultado {
+      color: #a8d5a2;
+      font-size: 22px;
+      font-weight: bold;
+      margin: 20px 0 0;
+    }
+
+    .caixa img {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .botao {
+      display: inline-block;
+      background-color: #08900a;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 30px;
+      font-size: 19px;
+      font-family: "Times New Roman", serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .botao:hover {
+      background-color: #067308;
+    }
+
+    .caixa select,
+    .caixa input[type="number"] {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-family: "Times New Roman", serif;
+      font-size: 18px;
+      margin: 0 10px 15px;
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 25px;
+      color: #634a40;
+    }
+
+    /* ---------- Celular ---------- */
+    @media (max-width: 700px) {
+      header {
+        padding: 0 20px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .menu-lateral {
+        width: 240px;
+      }
+      .faixa-titulo h2 {
+        font-size: 24px;
+      }
+      .secao h2 {
+        font-size: 34px;
+      }
+      .card {
+        width: 100%;
+      }
+    }
+
+    /* ---------- Lista de hábitos (checklist) ---------- */
+    .checklist {
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .checklist label {
+      display: block;
+      color: #f1e8e4;
+      font-size: 19px;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    .checklist input {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+    <h1>🌱 Sustentabilidade para Todos 🌱</h1>
+  </header>
+
+  <!-- Menu lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <a href="index.html">🏠 Início</a>
+    <a href="noticias.html">📰 Notícias</a>
+    <a href="contato.html">📞 Contato</a>
+    <a href="acessibilidade.html">♿ Acessibilidade</a>
+    <a href="sobre.html">ℹ️ Sobre</a>
+    <a href="dicas.html">💡 Dicas</a>
+    <a href="parceiros.html">🤝 Parceiros</a>
+    <a href="plastico.html">🧴 Plástico</a>
+    <a href="agua.html">💧 Água</a>
+    <a href="energia.html">⚡ Energia</a>
+  </nav>
+
+  <!-- Título da página -->
+  <section class="faixa-verde">
+    <div class="faixa-titulo">
+      <h2>Energia boa é energia bem usada</h2>
+    </div>
+    <p class="faixa-texto">
+      Economizar energia ajuda o planeta e ainda deixa a conta de luz mais leve. E o melhor: dá pra começar hoje, sem gastar nada.
+    </p>
+  </section>
+
+  <section class="secao">
+    <h2>Pequenos hábitos, grande economia</h2>
+
+    <div class="lista-cards">
+
+      <article class="card">
+        <div class="icone">💡</div>
+        <div class="conteudo">
+          <span class="etiqueta">Iluminação</span>
+          <h3>Lâmpada de LED</h3>
+          <p>Gasta bem menos energia que as lâmpadas antigas e dura muito mais tempo.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🌞</div>
+        <div class="conteudo">
+          <span class="etiqueta">Iluminação</span>
+          <h3>Aproveite a luz do dia</h3>
+          <p>Abra cortinas e janelas. Durante o dia, quase sempre dá para deixar a lâmpada apagada.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🔌</div>
+        <div class="conteudo">
+          <span class="etiqueta">Aparelhos</span>
+          <h3>Tire da tomada</h3>
+          <p>Aparelhos em modo de espera continuam consumindo energia. Desligue da tomada o que não está usando.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">❄️</div>
+        <div class="conteudo">
+          <span class="etiqueta">Cozinha</span>
+          <h3>Geladeira sem frestas</h3>
+          <p>Não deixe a porta aberta à toa e confira se a borracha está vedando bem.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🚿</div>
+        <div class="conteudo">
+          <span class="etiqueta">Banheiro</span>
+          <h3>Chuveiro no modo verão</h3>
+          <p>Nos dias quentes, a posição verão gasta bem menos energia que a inverno.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">☀️</div>
+        <div class="conteudo">
+          <span class="etiqueta">Fontes limpas</span>
+          <h3>Energia que vem do sol</h3>
+          <p>A energia solar é limpa e renovável. Cada vez mais casas e empresas estão usando painéis solares.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+  <section class="secao">
+    <h2>Quantos desses você já faz?</h2>
+
+    <div class="caixa">
+      <p>Marque os hábitos que já fazem parte da sua rotina:</p>
+
+      <div class="checklist">
+        <label><input type="checkbox" class="habito"> Apago a luz quando saio do cômodo</label>
+        <label><input type="checkbox" class="habito"> Uso lâmpadas de LED</label>
+        <label><input type="checkbox" class="habito"> Tiro os aparelhos da tomada</label>
+        <label><input type="checkbox" class="habito"> Aproveito a luz natural</label>
+        <label><input type="checkbox" class="habito"> Não deixo a geladeira aberta à toa</label>
+      </div>
+
+      <p class="resultado" id="resultadoHabitos">Você marcou 0 de 5. Bora começar? 🌱</p>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const botaoMenu = document.getElementById("botaoMenu");
+    const menuLateral = document.getElementById("menuLateral");
+
+    // Abre e fecha o menu ao clicar no botão ☰
+    botaoMenu.addEventListener("click", function () {
+      menuLateral.classList.toggle("aberto");
+    });
+
+    // Conta quantos hábitos foram marcados
+    const habitos = document.querySelectorAll(".habito");
+    const resultadoHabitos = document.getElementById("resultadoHabitos");
+
+    habitos.forEach(function (caixa) {
+      caixa.addEventListener("change", function () {
+        let marcados = 0;
+        habitos.forEach(function (h) {
+          if (h.checked) marcados++;
+        });
+
+        let mensagem = "Bora começar? 🌱";
+        if (marcados >= 2) mensagem = "Muito bem, continue assim! 👏";
+        if (marcados === habitos.length) mensagem = "Você é fera na economia de energia! ⚡";
+
+        resultadoHabitos.textContent = "Você marcou " + marcados + " de " + habitos.length + ". " + mensagem;
+      });
+    });
+  </script>
+
+</body>
+</html>

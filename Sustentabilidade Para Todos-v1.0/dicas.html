@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dicas - Sustentabilidade para Todos</title>
+
+  <style>
+    /* ---------- Estilo geral ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #634a40;
+    }
+
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background-color: #ffffff;
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+
+    .botao-menu {
+      background: none;
+      border: none;
+      font-size: 48px;
+      cursor: pointer;
+    }
+
+    header h1 {
+      color: #634a40;
+      font-size: 42px;
+    }
+
+    /* ---------- Menu lateral ---------- */
+    .menu-lateral {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 320px;
+      background-color: #ffffff;
+      border-radius: 0 0 16px 0;
+      padding: 20px 25px;
+      display: none;          /* começa escondido */
+      z-index: 10;
+    }
+
+    .menu-lateral.aberto {
+      display: block;         /* aparece quando clica no botão */
+    }
+
+    .menu-lateral a {
+      display: block;
+      padding: 18px 0;
+      color: #222;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    .menu-lateral a:hover {
+      color: #08900a;
+    }
+
+    /* ---------- Faixa verde com o título ---------- */
+    .faixa-verde {
+      background-color: #08900a;
+      padding: 50px 20px;
+    }
+
+    .faixa-titulo {
+      background-color: #634a40;
+      border-radius: 0 80px 80px 0;
+      padding: 40px;
+      text-align: center;
+      margin-right: 35px;
+    }
+
+    .faixa-titulo h2 {
+      color: #3fa9f5;
+      font-size: 34px;
+    }
+
+    .faixa-texto {
+      color: #7a1010;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    /* ---------- Dica do dia ---------- */
+    .dica-do-dia {
+      padding: 60px 20px 0;
+    }
+
+    .card-dia {
+      background-color: #755a4f;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-dia h3 {
+      color: #ffffff;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .card-dia p {
+      color: #a8d5a2;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      min-height: 60px;
+    }
+
+    .card-dia button {
+      background-color: #08900a;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 30px;
+      font-size: 19px;
+      font-family: "Times New Roman", serif;
+      cursor: pointer;
+    }
+
+    .card-dia button:hover {
+      background-color: #067308;
+    }
+
+    /* ---------- Seção de dicas ---------- */
+    .dicas {
+      padding: 60px 20px 80px;
+    }
+
+    .dicas h2 {
+      color: #a8d5a2;
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 50px;
+    }
+
+    .lista-dicas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #755a4f;
+      width: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card .icone {
+      background-color: #08900a;
+      font-size: 70px;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .card .conteudo {
+      padding: 20px 25px 25px;
+    }
+
+    .card .categoria {
+      color: #a8d5a2;
+      font-size: 15px;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      font-size: 24px;
+      margin: 8px 0 12px;
+    }
+
+    .card p {
+      color: #f1e8e4;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 25px;
+      color: #634a40;
+    }
+
+    /* ---------- Celular ---------- */
+    @media (max-width: 700px) {
+      header {
+        padding: 0 20px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .menu-lateral {
+        width: 240px;
+      }
+      .faixa-titulo h2 {
+        font-size: 24px;
+      }
+      .dicas h2 {
+        font-size: 34px;
+      }
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+    <h1>🌱 Sustentabilidade para Todos 🌱</h1>
+  </header>
+
+  <!-- Menu lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <a href="index.html">🏠 Início</a>
+    <a href="noticias.html">📰 Notícias</a>
+    <a href="contato.html">📞 Contato</a>
+    <a href="acessibilidade.html">♿ Acessibilidade</a>
+    <a href="sobre.html">ℹ️ Sobre</a>
+    <a href="dicas.html">💡 Dicas</a>
+    <a href="parceiros.html">🤝 Parceiros</a>
+    <a href="plastico.html">🧴 Plástico</a>
+    <a href="agua.html">💧 Água</a>
+    <a href="energia.html">⚡ Energia</a>
+  </nav>
+
+  <!-- Título da página -->
+  <section class="faixa-verde">
+    <div class="faixa-titulo">
+      <h2>Dicas para o dia a dia</h2>
+    </div>
+    <p class="faixa-texto">
+      Ninguém precisa mudar tudo de uma vez. Escolha uma dica,
+      coloque em prática e, quando virar hábito, parta para a próxima!
+    </p>
+  </section>
+
+  <!-- Dica do dia -->
+  <section class="dica-do-dia">
+    <div class="card-dia">
+      <h3>💡 Dica do dia</h3>
+      <p id="textoDica">Leve sua garrafinha de água para onde for e diga não aos copos descartáveis.</p>
+      <button id="botaoDica">Quero outra dica</button>
+    </div>
+  </section>
+
+  <!-- Dicas -->
+  <section class="dicas">
+    <h2>Comece por aqui</h2>
+
+    <div class="lista-dicas">
+
+      <article class="card">
+        <div class="icone">💧</div>
+        <div class="conteudo">
+          <span class="categoria">Água</span>
+          <h3>Banho mais curtinho</h3>
+          <p>Diminuir só 5 minutos no banho já economiza muitos litros de água. Que tal colocar uma música e sair quando ela acabar?</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🚰</div>
+        <div class="conteudo">
+          <span class="categoria">Água</span>
+          <h3>Torneira fechada</h3>
+          <p>Feche a torneira enquanto escova os dentes ou ensaboa a louça. Parece pouco, mas no fim do mês faz diferença.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">💡</div>
+        <div class="conteudo">
+          <span class="categoria">Energia</span>
+          <h3>Saiu do cômodo? Apaga a luz</h3>
+          <p>E troque as lâmpadas antigas por lâmpadas de LED: gastam menos energia e duram bem mais.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🔌</div>
+        <div class="conteudo">
+          <span class="categoria">Energia</span>
+          <h3>Tire da tomada</h3>
+          <p>Carregador, TV e micro-ondas continuam gastando energia mesmo desligados. Tirar da tomada ajuda o planeta e o bolso.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">♻️</div>
+        <div class="conteudo">
+          <span class="categoria">Lixo</span>
+          <h3>Separe o lixo</h3>
+          <p>Comece com duas lixeiras: uma para o reciclável (plástico, papel, vidro e metal) e outra para o resto. Simples assim.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🍌</div>
+        <div class="conteudo">
+          <span class="categoria">Alimentação</span>
+          <h3>Aproveite os alimentos</h3>
+          <p>Cascas e talos podem virar bolo, suco ou farofa. Planejar as compras também evita que a comida estrague na geladeira.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🛍️</div>
+        <div class="conteudo">
+          <span class="categoria">Consumo</span>
+          <h3>Sacola retornável</h3>
+          <p>Deixe uma sacola de pano na bolsa ou no carro. Assim você nunca precisa pegar sacolinha plástica no mercado.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">👕</div>
+        <div class="conteudo">
+          <span class="categoria">Consumo</span>
+          <h3>Doe e reaproveite</h3>
+          <p>Aquela roupa ou objeto parado pode ser muito útil para outra pessoa. Doar, trocar e consertar é sempre melhor que jogar fora.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🚲</div>
+        <div class="conteudo">
+          <span class="categoria">Transporte</span>
+          <h3>Vá a pé ou de bicicleta</h3>
+          <p>Para trajetos curtos, caminhar ou pedalar polui menos e ainda faz bem para a saúde. Para os longos, prefira o transporte público.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const botaoMenu = document.getElementById("botaoMenu");
+    const menuLateral = document.getElementById("menuLateral");
+
+    // Abre e fecha o menu ao clicar no botão ☰
+    botaoMenu.addEventListener("click", function () {
+      menuLateral.classList.toggle("aberto");
+    });
+
+    // Lista de dicas que aparecem no "Dica do dia"
+    const listaDicas = [
+      "Leve sua garrafinha de água para onde for e diga não aos copos descartáveis.",
+      "Use os dois lados da folha de papel antes de jogar fora.",
+      "Junte a água da máquina de lavar para limpar o quintal ou a calçada.",
+      "Abra as janelas e aproveite a luz do sol em vez de acender a lâmpada.",
+      "Óleo de cozinha usado não vai na pia: guarde numa garrafa e leve a um ponto de coleta.",
+      "Pilhas e baterias também não vão no lixo comum. Procure um ponto de coleta perto de você.",
+      "Antes de comprar algo novo, pergunte a si mesmo: eu realmente preciso disso?",
+      "Plante uma mudinha, mesmo que seja em um vaso na janela."
+    ];
+
+    const textoDica = document.getElementById("textoDica");
+    const botaoDica = document.getElementById("botaoDica");
+
+    // Sorteia uma dica diferente da que está na tela
+    botaoDica.addEventListener("click", function () {
+      let novaDica = textoDica.textContent;
+
+      while (novaDica === textoDica.textContent) {
+        const posicao = Math.floor(Math.random() * listaDicas.length);
+        novaDica = listaDicas[posicao];
+      }
+
+      textoDica.textContent = novaDica;
+    });
+  </script>
+
+</body>
+</html>

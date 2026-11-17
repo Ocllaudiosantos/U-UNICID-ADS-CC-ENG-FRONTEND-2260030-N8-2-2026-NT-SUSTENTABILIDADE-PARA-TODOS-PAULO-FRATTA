@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessibilidade - Sustentabilidade para Todos</title>
+
+  <style>
+    /* ---------- Estilo geral ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Times New Roman", serif;
+      background-color: #634a40;
+    }
+
+    /* ---------- Cabeçalho ---------- */
+    header {
+      background-color: #ffffff;
+      height: 135px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+    }
+
+    .botao-menu {
+      background: none;
+      border: none;
+      font-size: 48px;
+      cursor: pointer;
+    }
+
+    header h1 {
+      color: #634a40;
+      font-size: 42px;
+    }
+
+    /* ---------- Menu lateral ---------- */
+    .menu-lateral {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 320px;
+      background-color: #ffffff;
+      border-radius: 0 0 16px 0;
+      padding: 20px 25px;
+      display: none;          /* começa escondido */
+      z-index: 10;
+    }
+
+    .menu-lateral.aberto {
+      display: block;         /* aparece quando clica no botão */
+    }
+
+    .menu-lateral a {
+      display: block;
+      padding: 18px 0;
+      color: #222;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    .menu-lateral a:hover {
+      color: #08900a;
+    }
+
+    /* ---------- Faixa verde com o título ---------- */
+    .faixa-verde {
+      background-color: #08900a;
+      padding: 50px 20px;
+    }
+
+    .faixa-titulo {
+      background-color: #634a40;
+      border-radius: 0 80px 80px 0;
+      padding: 40px;
+      text-align: center;
+      margin-right: 35px;
+    }
+
+    .faixa-titulo h2 {
+      color: #3fa9f5;
+      font-size: 34px;
+    }
+
+    .faixa-texto {
+      color: #7a1010;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    /* ---------- Painel de ajustes (tamanho da letra e contraste) ---------- */
+    .ajustes {
+      padding: 60px 20px 0;
+    }
+
+    .card-ajustes {
+      background-color: #755a4f;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-ajustes h3 {
+      color: #ffffff;
+      font-size: 26px;
+      margin-bottom: 10px;
+    }
+
+    .card-ajustes p {
+      color: #f1e8e4;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .botoes-ajuste {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .botoes-ajuste button {
+      background-color: #08900a;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 24px;
+      font-size: 19px;
+      font-family: "Times New Roman", serif;
+      cursor: pointer;
+    }
+
+    .botoes-ajuste button:hover {
+      background-color: #067308;
+    }
+
+    /* contorno bem visível para quem navega pelo teclado (tecla Tab) */
+    a:focus,
+    button:focus {
+      outline: 3px solid #3fa9f5;
+      outline-offset: 3px;
+    }
+
+    /* ---------- Seção de recursos ---------- */
+    .recursos {
+      padding: 60px 20px 80px;
+    }
+
+    .recursos h2 {
+      color: #a8d5a2;
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 50px;
+    }
+
+    .lista-recursos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #755a4f;
+      width: 420px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card .icone {
+      background-color: #08900a;
+      font-size: 70px;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .card .conteudo {
+      padding: 20px 25px 25px;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #f1e8e4;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* ---------- Modo alto contraste ---------- */
+    body.alto-contraste,
+    body.alto-contraste .recursos,
+    body.alto-contraste .ajustes {
+      background-color: #000000;
+    }
+
+    body.alto-contraste header,
+    body.alto-contraste .menu-lateral,
+    body.alto-contraste footer,
+    body.alto-contraste .faixa-verde,
+    body.alto-contraste .faixa-titulo,
+    body.alto-contraste .card,
+    body.alto-contraste .card .icone,
+    body.alto-contraste .card-ajustes {
+      background-color: #000000;
+      border: 2px solid #ffff00;
+    }
+
+    body.alto-contraste h1,
+    body.alto-contraste h2,
+    body.alto-contraste h3,
+    body.alto-contraste p,
+    body.alto-contraste a,
+    body.alto-contraste .faixa-texto,
+    body.alto-contraste .botao-menu {
+      color: #ffff00;
+    }
+
+    body.alto-contraste .botoes-ajuste button {
+      background-color: #ffff00;
+      color: #000000;
+    }
+
+    /* ---------- Rodapé ---------- */
+    footer {
+      background-color: #ffffff;
+      text-align: center;
+      padding: 25px;
+      color: #634a40;
+    }
+
+    /* ---------- Celular ---------- */
+    @media (max-width: 700px) {
+      header {
+        padding: 0 20px;
+      }
+      header h1 {
+        font-size: 22px;
+      }
+      .menu-lateral {
+        width: 240px;
+      }
+      .faixa-titulo h2 {
+        font-size: 24px;
+      }
+      .recursos h2 {
+        font-size: 34px;
+      }
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" aria-label="Abrir menu">☰</button>
+    <h1>🌱 Sustentabilidade para Todos 🌱</h1>
+  </header>
+
+  <!-- Menu lateral -->
+  <nav class="menu-lateral" id="menuLateral">
+    <a href="index.html">🏠 Início</a>
+    <a href="noticias.html">📰 Notícias</a>
+    <a href="contato.html">📞 Contato</a>
+    <a href="acessibilidade.html">♿ Acessibilidade</a>
+    <a href="sobre.html">ℹ️ Sobre</a>
+    <a href="dicas.html">💡 Dicas</a>
+    <a href="parceiros.html">🤝 Parceiros</a>
+    <a href="plastico.html">🧴 Plástico</a>
+    <a href="agua.html">💧 Água</a>
+    <a href="energia.html">⚡ Energia</a>
+  </nav>
+
+  <!-- Título da página -->
+  <section class="faixa-verde">
+    <div class="faixa-titulo">
+      <h2>Um site feito para todo mundo</h2>
+    </div>
+    <p class="faixa-texto">
+      Sustentabilidade só faz sentido se incluir todas as pessoas.
+      Por isso, pensamos neste site para que qualquer um consiga ler,
+      navegar e aproveitar o conteúdo do seu jeito.
+    </p>
+  </section>
+
+  <!-- Ajustes de leitura -->
+  <section class="ajustes">
+    <div class="card-ajustes">
+      <h3>Deixe a leitura mais confortável</h3>
+      <p>Use os botões abaixo para aumentar a letra ou mudar as cores da página.</p>
+
+      <div class="botoes-ajuste">
+        <button id="aumentarLetra" aria-label="Aumentar o tamanho da letra">A+ Aumentar letra</button>
+        <button id="diminuirLetra" aria-label="Diminuir o tamanho da letra">A- Diminuir letra</button>
+        <button id="botaoContraste" aria-label="Ligar ou desligar o alto contraste">🌓 Alto contraste</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recursos de acessibilidade -->
+  <section class="recursos">
+    <h2>O que fizemos para te ajudar</h2>
+
+    <div class="lista-recursos">
+
+      <article class="card">
+        <div class="icone">🖼️</div>
+        <div class="conteudo">
+          <h3>Imagens com descrição</h3>
+          <p>Todas as fotos têm um texto explicando o que aparece nelas. Assim, quem usa leitor de tela também entende o conteúdo.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">⌨️</div>
+        <div class="conteudo">
+          <h3>Navegação pelo teclado</h3>
+          <p>Não usa mouse? Sem problema. Aperte a tecla Tab para passar pelos links e botões, e Enter para abrir.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🔎</div>
+        <div class="conteudo">
+          <h3>Letra que você pode ajustar</h3>
+          <p>Se a letra estiver pequena, use o botão "A+" aqui em cima ou segure Ctrl e aperte + no teclado.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">🎨</div>
+        <div class="conteudo">
+          <h3>Cores com bom contraste</h3>
+          <p>Escolhemos cores que se destacam bem do fundo. E, se precisar, o modo de alto contraste deixa tudo ainda mais fácil de ver.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">💬</div>
+        <div class="conteudo">
+          <h3>Linguagem simples</h3>
+          <p>Escrevemos do jeito que a gente fala, sem palavras difíceis. Informação boa é aquela que todo mundo entende.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone">📱</div>
+        <div class="conteudo">
+          <h3>Funciona no celular</h3>
+          <p>O site se adapta ao tamanho da tela, então você pode acessar pelo computador, tablet ou celular.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    const botaoMenu = document.getElementById("botaoMenu");
+    const menuLateral = document.getElementById("menuLateral");
+
+    // Abre e fecha o menu ao clicar no botão ☰
+    botaoMenu.addEventListener("click", function () {
+      menuLateral.classList.toggle("aberto");
+    });
+
+    // Tamanho da letra (1 = tamanho normal)
+    let tamanho = 1;
+
+    document.getElementById("aumentarLetra").addEventListener("click", function () {
+      if (tamanho < 1.4) {                 // limite para não estourar a tela
+        tamanho = tamanho + 0.1;
+        document.body.style.zoom = tamanho;
+      }
+    });
+
+    document.getElementById("diminuirLetra").addEventListener("click", function () {
+      if (tamanho > 1) {                   // não deixa ficar menor que o normal
+        tamanho = tamanho - 0.1;
+        document.body.style.zoom = tamanho;
+      }
+    });
+
+    // Liga e desliga o alto contraste
+    document.getElementById("botaoContraste").addEventListener("click", function () {
+      document.body.classList.toggle("alto-contraste");
+    });
+  </script>
+
+</body>
+</html>
