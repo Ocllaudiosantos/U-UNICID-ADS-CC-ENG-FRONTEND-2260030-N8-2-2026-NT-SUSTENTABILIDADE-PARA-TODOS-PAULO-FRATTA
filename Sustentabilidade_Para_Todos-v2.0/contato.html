@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fale com o projeto Sustentabilidade para Todos ou inscreva-se como voluntário.">
+  <title>Contato - Sustentabilidade para Todos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+  <!-- Link para quem navega pelo teclado pular direto para o conteúdo -->
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">☰</button>
+    <h1 class="titulo-site"><a href="index.html">🌱 Sustentabilidade para Todos 🌱</a></h1>
+    <button class="botao-contraste js-contraste" type="button" aria-pressed="false">🌓 Alto contraste</button>
+
+    <!-- Menu lateral -->
+    <nav class="menu-lateral" id="menuLateral" aria-label="Menu principal">
+      <a href="index.html">🏠 Início</a>
+      <a href="noticias.html">📰 Notícias</a>
+      <a href="contato.html" aria-current="page">📞 Contato</a>
+      <a href="acessibilidade.html">♿ Acessibilidade</a>
+      <a href="sobre.html">ℹ️ Sobre</a>
+      <a href="dicas.html">💡 Dicas</a>
+      <a href="parceiros.html">🤝 Parceiros e doações</a>
+      <a href="plastico.html">🧴 Plástico</a>
+      <a href="agua.html">💧 Água</a>
+      <a href="energia.html">⚡ Energia</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- Título da página -->
+    <section class="faixa-verde">
+      <div class="faixa-titulo">
+        <h2>Fale com a gente</h2>
+      </div>
+      <p class="faixa-texto">
+        Tem alguma dúvida, sugestão ou quer ser voluntário? Envie uma mensagem, vamos adorar ouvir você!
+      </p>
+    </section>
+
+    <section class="secao">
+      <h2>Nossos canais</h2>
+
+      <div class="lista-cards">
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">📧</div>
+        <div class="conteudo">
+          <h3>E-mail</h3>
+          <p>contato@sustentabilidadeparatodos.com</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">📞</div>
+        <div class="conteudo">
+          <h3>Telefone</h3>
+          <p>(11) 99999-9999</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🕒</div>
+        <div class="conteudo">
+          <h3>Atendimento</h3>
+          <p>Segunda a sexta, das 9h às 18h</p>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Envie sua mensagem</h2>
+
+      <div class="caixa">
+        <p id="avisoRascunho" class="aviso-rascunho" aria-live="polite"></p>
+
+        <form id="formContato" class="formulario" novalidate>
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" aria-describedby="erro-nome">
+            <span class="mensagem-erro" id="erro-nome"></span>
+          </div>
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" aria-describedby="erro-email">
+            <span class="mensagem-erro" id="erro-email"></span>
+          </div>
+          <div class="campo">
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto" aria-describedby="erro-assunto">
+              <option value="">-- escolha um assunto --</option>
+              <option value="voluntario">Quero ser voluntário</option>
+              <option value="duvida">Tenho uma dúvida</option>
+              <option value="sugestao">Quero dar uma sugestão</option>
+              <option value="parceria">Quero ser parceiro</option>
+            </select>
+            <span class="mensagem-erro" id="erro-assunto"></span>
+          </div>
+
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." aria-describedby="erro-mensagem"></textarea>
+            <span class="mensagem-erro" id="erro-mensagem"></span>
+          </div>
+
+          <button class="botao" type="submit">Enviar mensagem</button>
+        </form>
+
+        <p class="mensagem-sucesso" id="mensagemSucesso" role="status">
+          ✅ Mensagem enviada com sucesso! Obrigado pelo contato.
+        </p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Onde estamos</h2>
+
+      <div class="caixa">
+        <div class="video">
+          <iframe src="https://www.google.com/maps?q=S%C3%A3o+Paulo+SP&amp;output=embed"
+                  title="Mapa mostrando a cidade de São Paulo"
+                  loading="lazy"></iframe>
+        </div>
+        <p>📍 São Paulo - SP</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recursos de acessibilidade do site: contraste, tamanho da letra e navegação pelo teclado.">
+  <title>Acessibilidade - Sustentabilidade para Todos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+  <!-- Link para quem navega pelo teclado pular direto para o conteúdo -->
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">☰</button>
+    <h1 class="titulo-site"><a href="index.html">🌱 Sustentabilidade para Todos 🌱</a></h1>
+    <button class="botao-contraste js-contraste" type="button" aria-pressed="false">🌓 Alto contraste</button>
+
+    <!-- Menu lateral -->
+    <nav class="menu-lateral" id="menuLateral" aria-label="Menu principal">
+      <a href="index.html">🏠 Início</a>
+      <a href="noticias.html">📰 Notícias</a>
+      <a href="contato.html">📞 Contato</a>
+      <a href="acessibilidade.html" aria-current="page">♿ Acessibilidade</a>
+      <a href="sobre.html">ℹ️ Sobre</a>
+      <a href="dicas.html">💡 Dicas</a>
+      <a href="parceiros.html">🤝 Parceiros e doações</a>
+      <a href="plastico.html">🧴 Plástico</a>
+      <a href="agua.html">💧 Água</a>
+      <a href="energia.html">⚡ Energia</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- Título da página -->
+    <section class="faixa-verde">
+      <div class="faixa-titulo">
+        <h2>Um site feito para todo mundo</h2>
+      </div>
+      <p class="faixa-texto">
+        Sustentabilidade só faz sentido se incluir todas as pessoas. Por isso, pensamos neste site para que qualquer um consiga ler, navegar e aproveitar o conteúdo do seu jeito.
+      </p>
+    </section>
+
+    <section class="secao">
+      <div class="caixa">
+        <h3>Deixe a leitura mais confortável</h3>
+        <p>Use os botões abaixo para aumentar a letra ou mudar as cores. Sua escolha fica salva para as próximas visitas.</p>
+
+        <div class="grupo-botoes">
+          <button class="botao" id="aumentarLetra" type="button" aria-label="Aumentar o tamanho da letra">A+ Aumentar letra</button>
+          <button class="botao" id="diminuirLetra" type="button" aria-label="Diminuir o tamanho da letra">A- Diminuir letra</button>
+          <button class="botao js-contraste" type="button" aria-pressed="false">🌓 Alto contraste</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>O que fizemos para te ajudar</h2>
+
+      <div class="lista-cards">
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🖼️</div>
+        <div class="conteudo">
+          <h3>Imagens com descrição</h3>
+          <p>Todas as fotos têm um texto explicando o que aparece nelas. Assim, quem usa leitor de tela também entende o conteúdo.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">⌨️</div>
+        <div class="conteudo">
+          <h3>Navegação pelo teclado</h3>
+          <p>Não usa mouse? Sem problema. Aperte Tab para passar pelos links e botões, Enter para abrir e Esc para fechar o menu.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">⏭️</div>
+        <div class="conteudo">
+          <h3>Pular para o conteúdo</h3>
+          <p>Ao apertar Tab no começo da página, aparece um atalho que leva direto ao conteúdo, sem passar pelo menu.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🎨</div>
+        <div class="conteudo">
+          <h3>Cores com bom contraste</h3>
+          <p>As cores foram escolhidas para se destacar bem do fundo. O modo de alto contraste deixa tudo ainda mais fácil de ver.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">💬</div>
+        <div class="conteudo">
+          <h3>Linguagem simples</h3>
+          <p>Escrevemos do jeito que a gente fala, sem palavras difíceis. Informação boa é aquela que todo mundo entende.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">📱</div>
+        <div class="conteudo">
+          <h3>Funciona no celular</h3>
+          <p>O site se adapta ao tamanho da tela, então você pode acessar pelo computador, tablet ou celular.</p>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

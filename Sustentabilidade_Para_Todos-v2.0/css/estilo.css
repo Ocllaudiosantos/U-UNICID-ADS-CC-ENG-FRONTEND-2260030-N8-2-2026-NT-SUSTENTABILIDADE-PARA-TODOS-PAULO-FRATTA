@@ -1,0 +1,692 @@
+/* =========================================================
+   Sustentabilidade para Todos — estilo único do site
+   Todas as 10 páginas usam este mesmo arquivo, assim a
+   identidade visual (cores, fontes, cards) fica igual em tudo.
+   ========================================================= */
+
+/* ---------- Cores do site (variáveis) ---------- */
+:root {
+  --verde: #08900a;
+  --verde-escuro: #056b07;     /* botões: texto branco com contraste AA */
+  --verde-mais-escuro: #044f05;
+  --marrom: #634a40;
+  --marrom-card: #755a4f;
+  --verde-claro: #c8e6c4;      /* textos pequenos sobre o marrom */
+  --verde-titulo: #a8d5a2;
+  --azul: #3fa9f5;
+  --vinho: #3a0505;
+  --texto-claro: #f1e8e4;
+  --branco: #ffffff;
+  --erro: #ffe0db;
+}
+
+/* ---------- Estilo geral ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", serif;
+  background-color: var(--marrom);
+}
+
+/* transições suaves em links, botões e cards */
+a,
+button,
+.card,
+input,
+select,
+textarea {
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+/* foco bem visível para quem navega pelo teclado (Tab) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--azul);
+  outline-offset: 3px;
+}
+
+/* link "Pular para o conteúdo": só aparece quando recebe foco pelo Tab */
+.pular-conteudo {
+  position: absolute;
+  left: 10px;
+  top: -60px;
+  background-color: var(--branco);
+  color: var(--marrom);
+  padding: 10px 16px;
+  border-radius: 8px;
+  z-index: 100;
+  font-size: 18px;
+}
+
+.pular-conteudo:focus {
+  top: 10px;
+}
+
+/* ---------- Cabeçalho ---------- */
+header {
+  background-color: var(--branco);
+  min-height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 0 60px;
+  position: relative;
+}
+
+.botao-menu,
+.botao-contraste {
+  background: none;
+  border: none;
+  font-size: 48px;
+  cursor: pointer;
+  color: #222;
+}
+
+.botao-contraste {
+  font-size: 18px;
+  font-family: "Times New Roman", serif;
+  border: 2px solid var(--marrom);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--marrom);
+}
+
+.botao-contraste:hover {
+  background-color: var(--marrom);
+  color: var(--branco);
+}
+
+.titulo-site {
+  font-size: 42px;
+  text-align: center;
+}
+
+.titulo-site a {
+  color: var(--marrom);
+  text-decoration: none;
+}
+
+/* ---------- Menu lateral ---------- */
+.menu-lateral {
+  position: absolute;
+  top: 100%;          /* logo abaixo do cabeçalho */
+  left: 0;
+  width: 320px;
+  background-color: var(--branco);
+  border-radius: 0 0 16px 0;
+  padding: 20px 25px;
+  display: none;          /* começa escondido */
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.menu-lateral.aberto {
+  display: block;         /* aparece quando clica no botão ☰ */
+}
+
+.menu-lateral a {
+  display: block;
+  padding: 14px 0;
+  color: #222;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.menu-lateral a:hover,
+.menu-lateral a[aria-current="page"] {
+  color: var(--verde-escuro);
+  font-weight: bold;
+}
+
+/* ---------- Faixa verde com o título ---------- */
+.faixa-verde {
+  background-color: var(--verde);
+  padding: 50px 20px;
+}
+
+.faixa-titulo {
+  background-color: var(--marrom);
+  border-radius: 0 80px 80px 0;
+  padding: 40px;
+  text-align: center;
+  margin-right: 35px;
+}
+
+.faixa-titulo h2 {
+  color: var(--azul);
+  font-size: 34px;
+}
+
+.faixa-texto {
+  color: var(--vinho);
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+/* ---------- Seções ---------- */
+.secao {
+  padding: 60px 20px 0;
+}
+
+main > .secao:last-child {
+  padding-bottom: 80px;
+}
+
+.secao h2 {
+  color: var(--verde-titulo);
+  text-align: center;
+  font-size: 52px;
+  margin-bottom: 50px;
+}
+
+/* ---------- Galeria de fotos (página inicial) ---------- */
+.galeria {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 35px;
+}
+
+.galeria img {
+  width: 280px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.texto-destaque {
+  max-width: 900px;
+  margin: 40px auto 0;
+  font-size: 24px;
+  line-height: 1.6;
+  color: var(--verde-titulo);
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ---------- Cards ---------- */
+.lista-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--marrom-card);
+  width: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* card que leva para outra página (ex.: Plástico, Água, Energia) */
+a.card {
+  display: block;
+  text-decoration: none;
+  width: 300px;
+}
+
+.card .icone {
+  background-color: var(--verde);
+  font-size: 70px;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.card .conteudo {
+  padding: 20px 25px 25px;
+}
+
+.card .etiqueta {
+  color: var(--verde-claro);
+  font-size: 16px;
+}
+
+.card h3 {
+  color: var(--branco);
+  font-size: 24px;
+  margin: 8px 0 12px;
+}
+
+.card p {
+  overflow-wrap: anywhere;   /* quebra e-mails compridos no celular */
+  color: var(--texto-claro);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* card escondido pelo filtro de notícias */
+.card.escondido {
+  display: none;
+}
+
+/* ---------- Caixa de destaque ---------- */
+.caixa {
+  background-color: var(--marrom-card);
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.caixa h3 {
+  color: var(--branco);
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+.caixa p,
+.caixa li {
+  color: var(--texto-claro);
+  font-size: 19px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.caixa strong {
+  color: var(--verde-claro);
+}
+
+.caixa .texto-esquerda {
+  text-align: left;
+}
+
+.caixa img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.resultado {
+  color: var(--verde-claro);
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* vídeo e mapa que se ajustam à largura da tela */
+.video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 15px;
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-block;
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 14px 30px;
+  font-size: 19px;
+  font-family: "Times New Roman", serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: var(--verde-mais-escuro);
+}
+
+.grupo-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+/* botão de filtro selecionado */
+.botao[aria-pressed="true"] {
+  background-color: var(--branco);
+  color: var(--verde-escuro);
+  border-color: var(--verde-escuro);
+}
+
+/* ---------- Formulários ---------- */
+.formulario {
+  text-align: left;
+}
+
+.formulario label,
+.formulario legend {
+  display: block;
+  color: var(--texto-claro);
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.formulario fieldset {
+  border: none;
+  margin-bottom: 18px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario input[type="number"],
+.formulario select,
+.formulario textarea {
+  width: 100%;
+  padding: 12px;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  font-family: "Times New Roman", serif;
+  font-size: 17px;
+}
+
+.formulario textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+/* borda vermelha quando o campo está com erro */
+.formulario input.campo-erro,
+.formulario select.campo-erro,
+.formulario textarea.campo-erro {
+  border-color: #ff1a1a;
+  background-color: #fff3f2;
+}
+
+.mensagem-erro {
+  display: block;
+  color: var(--erro);
+  font-size: 16px;
+  font-weight: bold;
+  min-height: 20px;
+  margin-top: 4px;
+}
+
+.opcoes-valor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.opcoes-valor label {
+  display: inline-block;
+  background-color: var(--marrom);
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.aviso-rascunho {
+  color: var(--verde-claro);
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.mensagem-sucesso {
+  display: none;
+  color: var(--verde-claro);
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* ---------- Checklist (página Energia) ---------- */
+.checklist {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.checklist label {
+  display: block;
+  color: var(--texto-claro);
+  font-size: 19px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.checklist input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+/* ---------- Perguntas frequentes (details) ---------- */
+details {
+  background-color: var(--marrom);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+summary {
+  color: var(--branco);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+details p {
+  margin: 12px 0 0;
+}
+
+/* ---------- EcoBot (assistente de perguntas) ---------- */
+.ecobot-botao {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: var(--verde-escuro);
+  color: var(--branco);
+  border: 3px solid var(--branco);
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-family: "Times New Roman", serif;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.ecobot-botao:hover {
+  background-color: var(--verde-mais-escuro);
+}
+
+.ecobot-janela {
+  position: fixed;
+  right: 20px;
+  bottom: 85px;
+  width: 340px;
+  max-width: calc(100% - 40px);
+  background-color: var(--branco);
+  border-radius: 16px;
+  padding: 20px;
+  z-index: 50;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.ecobot-janela[hidden] {
+  display: none;
+}
+
+.ecobot-janela h2 {
+  color: var(--marrom);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.ecobot-janela p {
+  color: #222;
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.ecobot-perguntas {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ecobot-perguntas button {
+  background-color: #eef6ed;
+  color: #1b4d1c;
+  border: 1px solid var(--verde-escuro);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 16px;
+  font-family: "Times New Roman", serif;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ecobot-perguntas button:hover {
+  background-color: #d4ead2;
+}
+
+.ecobot-resposta {
+  background-color: #f6f1ee;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+  background-color: var(--branco);
+  text-align: center;
+  padding: 25px;
+  color: var(--marrom);
+}
+
+/* ---------- Modo alto contraste (vale para o site todo) ---------- */
+body.alto-contraste,
+body.alto-contraste header,
+body.alto-contraste .menu-lateral,
+body.alto-contraste footer,
+body.alto-contraste .faixa-verde,
+body.alto-contraste .faixa-titulo,
+body.alto-contraste .card,
+body.alto-contraste .card .icone,
+body.alto-contraste .caixa,
+body.alto-contraste details,
+body.alto-contraste .opcoes-valor label,
+body.alto-contraste .ecobot-janela,
+body.alto-contraste .ecobot-resposta {
+  background-color: #000000;
+  border-color: #ffff00;
+}
+
+body.alto-contraste .card,
+body.alto-contraste .caixa,
+body.alto-contraste header,
+body.alto-contraste footer,
+body.alto-contraste .ecobot-janela {
+  border: 2px solid #ffff00;
+}
+
+body.alto-contraste,
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste p,
+body.alto-contraste li,
+body.alto-contraste a,
+body.alto-contraste label,
+body.alto-contraste legend,
+body.alto-contraste summary,
+body.alto-contraste strong,
+body.alto-contraste .titulo-site a,
+body.alto-contraste .faixa-texto,
+body.alto-contraste .etiqueta,
+body.alto-contraste .botao-menu,
+body.alto-contraste .botao-contraste {
+  color: #ffff00;
+}
+
+body.alto-contraste .botao,
+body.alto-contraste .ecobot-botao,
+body.alto-contraste .ecobot-perguntas button {
+  background-color: #ffff00;
+  color: #000000;
+}
+
+body.alto-contraste .botao-contraste {
+  border-color: #ffff00;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 700px) {
+  header {
+    padding: 10px 15px;
+  }
+  .titulo-site {
+    font-size: 22px;
+  }
+  .botao-menu {
+    font-size: 36px;
+  }
+  .botao-contraste {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+  .menu-lateral {
+    width: 240px;
+  }
+  .faixa-titulo {
+    padding: 25px;
+    margin-right: 10px;
+  }
+  .faixa-titulo h2 {
+    font-size: 24px;
+  }
+  .faixa-texto {
+    font-size: 20px;
+  }
+  .secao h2 {
+    font-size: 34px;
+  }
+  .card,
+  a.card {
+    width: 100%;
+  }
+  .caixa {
+    padding: 20px;
+  }
+}
+
+fieldset.checklist {
+  border: none;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Últimas notícias sobre sustentabilidade, meio ambiente e acessibilidade.">
+  <title>Notícias - Sustentabilidade para Todos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+  <!-- Link para quem navega pelo teclado pular direto para o conteúdo -->
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">☰</button>
+    <h1 class="titulo-site"><a href="index.html">🌱 Sustentabilidade para Todos 🌱</a></h1>
+    <button class="botao-contraste js-contraste" type="button" aria-pressed="false">🌓 Alto contraste</button>
+
+    <!-- Menu lateral -->
+    <nav class="menu-lateral" id="menuLateral" aria-label="Menu principal">
+      <a href="index.html">🏠 Início</a>
+      <a href="noticias.html" aria-current="page">📰 Notícias</a>
+      <a href="contato.html">📞 Contato</a>
+      <a href="acessibilidade.html">♿ Acessibilidade</a>
+      <a href="sobre.html">ℹ️ Sobre</a>
+      <a href="dicas.html">💡 Dicas</a>
+      <a href="parceiros.html">🤝 Parceiros e doações</a>
+      <a href="plastico.html">🧴 Plástico</a>
+      <a href="agua.html">💧 Água</a>
+      <a href="energia.html">⚡ Energia</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- Título da página -->
+    <section class="faixa-verde">
+      <div class="faixa-titulo">
+        <h2>Fique por dentro das novidades</h2>
+      </div>
+      <p class="faixa-texto">
+        Acompanhe as últimas notícias sobre sustentabilidade, meio ambiente e acessibilidade e veja como pequenas atitudes fazem diferença.
+      </p>
+    </section>
+
+    <section class="secao">
+      <h2>Últimas notícias</h2>
+      <div class="grupo-botoes" role="group" aria-label="Filtrar notícias por tema">
+        <button class="botao js-filtro" type="button" data-categoria="todas" aria-pressed="true">Todas</button>
+        <button class="botao js-filtro" type="button" data-categoria="meio-ambiente" aria-pressed="false">Meio ambiente</button>
+        <button class="botao js-filtro" type="button" data-categoria="agua" aria-pressed="false">Água</button>
+        <button class="botao js-filtro" type="button" data-categoria="energia" aria-pressed="false">Energia</button>
+        <button class="botao js-filtro" type="button" data-categoria="acessibilidade" aria-pressed="false">Acessibilidade</button>
+      </div>
+
+      <div class="lista-cards">
+
+      <article class="card noticia" data-categoria="meio-ambiente">
+        <div class="icone" aria-hidden="true">♻️</div>
+        <div class="conteudo">
+          <span class="etiqueta"><time datetime="2026-11-05">05/11/2026</time> · Meio ambiente</span>
+          <h3>Reciclagem cresce nas cidades</h3>
+          <p>Cada vez mais bairros estão adotando a coleta seletiva, ajudando a reduzir o lixo que vai para os aterros.</p>
+        </div>
+      </article>
+
+      <article class="card noticia" data-categoria="agua">
+        <div class="icone" aria-hidden="true">💧</div>
+        <div class="conteudo">
+          <span class="etiqueta"><time datetime="2026-11-03">03/11/2026</time> · Água</span>
+          <h3>Economia de água em casa</h3>
+          <p>Hábitos simples, como fechar a torneira ao escovar os dentes, ajudam a preservar um recurso essencial.</p>
+        </div>
+      </article>
+
+      <article class="card noticia" data-categoria="meio-ambiente">
+        <div class="icone" aria-hidden="true">🌳</div>
+        <div class="conteudo">
+          <span class="etiqueta"><time datetime="2026-11-01">01/11/2026</time> · Meio ambiente</span>
+          <h3>Projetos de reflorestamento</h3>
+          <p>Iniciativas com a participação da comunidade estão recuperando áreas verdes e protegendo a natureza.</p>
+        </div>
+      </article>
+
+      <article class="card noticia" data-categoria="acessibilidade">
+        <div class="icone" aria-hidden="true">♿</div>
+        <div class="conteudo">
+          <span class="etiqueta"><time datetime="2026-10-29">29/10/2026</time> · Acessibilidade</span>
+          <h3>Acessibilidade em espaços públicos</h3>
+          <p>Praças e prédios estão sendo adaptados para que todas as pessoas possam usar os espaços com segurança.</p>
+        </div>
+      </article>
+
+      <article class="card noticia" data-categoria="energia">
+        <div class="icone" aria-hidden="true">☀️</div>
+        <div class="conteudo">
+          <span class="etiqueta"><time datetime="2026-10-27">27/10/2026</time> · Energia</span>
+          <h3>Energia solar mais acessível</h3>
+          <p>O uso de painéis solares vem crescendo e ajuda famílias a economizar na conta de luz.</p>
+        </div>
+      </article>
+
+      <article class="card noticia" data-categoria="meio-ambiente">
+        <div class="icone" aria-hidden="true">🛍️</div>
+        <div class="conteudo">
+          <span class="etiqueta"><time datetime="2026-10-25">25/10/2026</time> · Meio ambiente</span>
+          <h3>Sacolas reutilizáveis ganham força</h3>
+          <p>Comércios incentivam o uso de sacolas retornáveis para diminuir o consumo de plástico.</p>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Assista e aprenda</h2>
+
+      <div class="caixa">
+        <div class="video">
+          <iframe src="https://www.youtube-nocookie.com/embed/XrCdZy9Mvb0"
+                  title="Vídeo: O que é sustentabilidade?"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        <p>Um vídeo curtinho explicando o que é sustentabilidade e por que ela importa no nosso dia a dia.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parceiros do projeto e como apoiar com doações, materiais ou trabalho voluntário.">
+  <title>Parceiros e doações - Sustentabilidade para Todos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+  <!-- Link para quem navega pelo teclado pular direto para o conteúdo -->
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">☰</button>
+    <h1 class="titulo-site"><a href="index.html">🌱 Sustentabilidade para Todos 🌱</a></h1>
+    <button class="botao-contraste js-contraste" type="button" aria-pressed="false">🌓 Alto contraste</button>
+
+    <!-- Menu lateral -->
+    <nav class="menu-lateral" id="menuLateral" aria-label="Menu principal">
+      <a href="index.html">🏠 Início</a>
+      <a href="noticias.html">📰 Notícias</a>
+      <a href="contato.html">📞 Contato</a>
+      <a href="acessibilidade.html">♿ Acessibilidade</a>
+      <a href="sobre.html">ℹ️ Sobre</a>
+      <a href="dicas.html">💡 Dicas</a>
+      <a href="parceiros.html" aria-current="page">🤝 Parceiros e doações</a>
+      <a href="plastico.html">🧴 Plástico</a>
+      <a href="agua.html">💧 Água</a>
+      <a href="energia.html">⚡ Energia</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- Título da página -->
+    <section class="faixa-verde">
+      <div class="faixa-titulo">
+        <h2>Ninguém muda o mundo sozinho</h2>
+      </div>
+      <p class="faixa-texto">
+        Esse projeto só anda porque tem muita gente boa caminhando junto. Conheça quem ajuda a fazer a diferença e veja como você também pode apoiar.
+      </p>
+    </section>
+
+    <section class="secao">
+      <h2>Quem caminha com a gente</h2>
+
+      <div class="lista-cards">
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">♻️</div>
+        <div class="conteudo">
+          <span class="etiqueta">Meio ambiente</span>
+          <h3>Cooperativas de reciclagem</h3>
+          <p>Elas recebem, separam e dão um novo destino ao material reciclável. Além de cuidar do planeta, geram renda para muitas famílias.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🏫</div>
+        <div class="conteudo">
+          <span class="etiqueta">Educação</span>
+          <h3>Escolas do bairro</h3>
+          <p>Levamos conversas e atividades sobre sustentabilidade para a sala de aula. As crianças aprendem e ensinam tudo em casa.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🛒</div>
+        <div class="conteudo">
+          <span class="etiqueta">Comunidade</span>
+          <h3>Comércio local</h3>
+          <p>Mercadinhos, padarias e feiras que incentivam a sacola retornável e servem de ponto de coleta para pilhas e óleo usado.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🌳</div>
+        <div class="conteudo">
+          <span class="etiqueta">Natureza</span>
+          <h3>Grupos de plantio</h3>
+          <p>Gente que coloca a mão na terra para plantar árvores em praças, calçadas e áreas que precisam de mais verde.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">♿</div>
+        <div class="conteudo">
+          <span class="etiqueta">Inclusão</span>
+          <h3>Associações de pessoas com deficiência</h3>
+          <p>Elas nos ajudam a deixar o site e as ações mais acessíveis, dando opinião de quem vive isso no dia a dia.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🙋</div>
+        <div class="conteudo">
+          <span class="etiqueta">Pessoas</span>
+          <h3>Voluntários</h3>
+          <p>Pessoas comuns que doam um pouquinho do seu tempo. Sem elas, nada disso sairia do papel.</p>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+    <section class="secao" id="apoie">
+      <h2>Apoie o projeto</h2>
+
+      <div class="caixa">
+        <p>Escolha como quer ajudar e deixe seu contato. A gente responde por e-mail com os próximos passos.</p>
+        <p><strong>Importante:</strong> este é um projeto acadêmico. Nenhum pagamento é feito pelo site.</p>
+
+        <form id="formDoacao" class="formulario" novalidate>
+          <fieldset aria-describedby="erro-valor">
+            <legend>Como você quer apoiar?</legend>
+            <div class="opcoes-valor">
+              <label><input type="radio" name="valor" value="doação de R$ 10"> 💚 R$ 10</label>
+              <label><input type="radio" name="valor" value="doação de R$ 25"> 💚 R$ 25</label>
+              <label><input type="radio" name="valor" value="doação de R$ 50"> 💚 R$ 50</label>
+              <label><input type="radio" name="valor" value="doação de materiais recicláveis"> ♻️ Doar materiais</label>
+              <label><input type="radio" name="valor" value="trabalho voluntário"> 🙋 Ser voluntário</label>
+            </div>
+            <span class="mensagem-erro" id="erro-valor"></span>
+          </fieldset>
+
+          <div class="campo">
+            <label for="nomeDoador">Nome</label>
+            <input type="text" id="nomeDoador" name="nomeDoador" placeholder="Seu nome" aria-describedby="erro-nomeDoador">
+            <span class="mensagem-erro" id="erro-nomeDoador"></span>
+          </div>
+
+          <div class="campo">
+            <label for="emailDoador">E-mail</label>
+            <input type="email" id="emailDoador" name="emailDoador" placeholder="seuemail@exemplo.com" aria-describedby="erro-emailDoador">
+            <span class="mensagem-erro" id="erro-emailDoador"></span>
+          </div>
+
+          <button class="botao" type="submit">Quero apoiar</button>
+        </form>
+
+        <p class="mensagem-sucesso" id="sucessoDoacao" role="status"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

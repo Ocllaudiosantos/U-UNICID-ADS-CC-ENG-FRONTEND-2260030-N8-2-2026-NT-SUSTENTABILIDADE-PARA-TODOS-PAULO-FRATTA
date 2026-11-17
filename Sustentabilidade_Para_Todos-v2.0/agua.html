@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calcule quanto de água você gasta no banho e veja dicas para economizar.">
+  <title>Água - Sustentabilidade para Todos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+  <!-- Link para quem navega pelo teclado pular direto para o conteúdo -->
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">☰</button>
+    <h1 class="titulo-site"><a href="index.html">🌱 Sustentabilidade para Todos 🌱</a></h1>
+    <button class="botao-contraste js-contraste" type="button" aria-pressed="false">🌓 Alto contraste</button>
+
+    <!-- Menu lateral -->
+    <nav class="menu-lateral" id="menuLateral" aria-label="Menu principal">
+      <a href="index.html">🏠 Início</a>
+      <a href="noticias.html">📰 Notícias</a>
+      <a href="contato.html">📞 Contato</a>
+      <a href="acessibilidade.html">♿ Acessibilidade</a>
+      <a href="sobre.html">ℹ️ Sobre</a>
+      <a href="dicas.html">💡 Dicas</a>
+      <a href="parceiros.html">🤝 Parceiros e doações</a>
+      <a href="plastico.html">🧴 Plástico</a>
+      <a href="agua.html" aria-current="page">💧 Água</a>
+      <a href="energia.html">⚡ Energia</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- Título da página -->
+    <section class="faixa-verde">
+      <div class="faixa-titulo">
+        <h2>Cada gota conta</h2>
+      </div>
+      <p class="faixa-texto">
+        A água parece infinita quando sai da torneira, mas não é. Cuidar dela é cuidar da gente, da nossa casa e do nosso bolso.
+      </p>
+    </section>
+
+    <section class="secao">
+      <div class="caixa">
+        <img src="imagem/agua.jpg" alt="Torneira aberta com água limpa caindo">
+        <h3>Quanto você gasta no banho?</h3>
+        <p>Coloque quantos minutos dura o seu banho e veja uma estimativa:</p>
+
+        <label for="minutosBanho" class="resultado">Minutos de banho:</label>
+        <input type="number" id="minutosBanho" min="1" max="60" value="15">
+        <button class="botao" id="botaoCalcular" type="button">Calcular</button>
+
+        <p class="resultado" id="resultadoBanho" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Jeitos simples de economizar</h2>
+
+      <div class="lista-cards">
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🚿</div>
+        <div class="conteudo">
+          <span class="etiqueta">No banheiro</span>
+          <h3>Banho de 5 minutos</h3>
+          <p>Desligue o chuveiro enquanto se ensaboa. Dá para tomar um banho gostoso gastando bem menos.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🪥</div>
+        <div class="conteudo">
+          <span class="etiqueta">No banheiro</span>
+          <h3>Torneira fechada</h3>
+          <p>Ao escovar os dentes ou fazer a barba, abra a torneira só na hora de enxaguar.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🍽️</div>
+        <div class="conteudo">
+          <span class="etiqueta">Na cozinha</span>
+          <h3>Louça de uma vez</h3>
+          <p>Ensaboe toda a louça com a torneira fechada e depois enxágue tudo junto.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">👕</div>
+        <div class="conteudo">
+          <span class="etiqueta">Na lavanderia</span>
+          <h3>Máquina cheia</h3>
+          <p>Junte bastante roupa antes de ligar a máquina. E reaproveite a água do enxágue para lavar o quintal.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🧹</div>
+        <div class="conteudo">
+          <span class="etiqueta">No quintal</span>
+          <h3>Vassoura no lugar da mangueira</h3>
+          <p>Calçada se limpa com vassoura. A mangueira gasta muita água em poucos minutos.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🔧</div>
+        <div class="conteudo">
+          <span class="etiqueta">Em casa toda</span>
+          <h3>Fique de olho nos vazamentos</h3>
+          <p>Uma torneira pingando parece pouco, mas ao longo do mês desperdiça muita água. Conserte assim que notar.</p>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

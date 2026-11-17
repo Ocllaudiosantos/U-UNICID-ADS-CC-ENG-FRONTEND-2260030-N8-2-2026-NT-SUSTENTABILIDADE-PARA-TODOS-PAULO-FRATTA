@@ -1,0 +1,11 @@
+Projeto: Sustentabilidade para Todos
+Disciplina: Desenvolvimento Front-End para Web - UNICID - AV A1 (2ª entrega)
+
+Integrantes (nome completo - RGM - papel):
+1. Claudio Santos Costa - 47708077 - Planejamento e deploy
+2. Lucas Lopes da Silva - 47672960 - Programação do site
+3. Kevin Miney Tan Broetto - 47746882 - Estrutura
+4. Otávio Oliveira Marselhas - 47681859 - Documentação
+
+URL do site publicado: https://sustentabilidadeparatodos.up.railway.app/
+Repositório no GitHub: https://github.com/Ocllaudiosantos/U-UNICID-ADS-CC-ENG-FRONTEND-2260030-N8-2-2026-NT-SUSTENTABILIDADE-PARA-TODOS-PAULO-FRATTA

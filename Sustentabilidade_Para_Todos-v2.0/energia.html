@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dicas para economizar energia e um teste rápido dos seus hábitos.">
+  <title>Energia - Sustentabilidade para Todos</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+
+  <!-- Link para quem navega pelo teclado pular direto para o conteúdo -->
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- Cabeçalho -->
+  <header>
+    <button class="botao-menu" id="botaoMenu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuLateral">☰</button>
+    <h1 class="titulo-site"><a href="index.html">🌱 Sustentabilidade para Todos 🌱</a></h1>
+    <button class="botao-contraste js-contraste" type="button" aria-pressed="false">🌓 Alto contraste</button>
+
+    <!-- Menu lateral -->
+    <nav class="menu-lateral" id="menuLateral" aria-label="Menu principal">
+      <a href="index.html">🏠 Início</a>
+      <a href="noticias.html">📰 Notícias</a>
+      <a href="contato.html">📞 Contato</a>
+      <a href="acessibilidade.html">♿ Acessibilidade</a>
+      <a href="sobre.html">ℹ️ Sobre</a>
+      <a href="dicas.html">💡 Dicas</a>
+      <a href="parceiros.html">🤝 Parceiros e doações</a>
+      <a href="plastico.html">🧴 Plástico</a>
+      <a href="agua.html">💧 Água</a>
+      <a href="energia.html" aria-current="page">⚡ Energia</a>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- Título da página -->
+    <section class="faixa-verde">
+      <div class="faixa-titulo">
+        <h2>Energia boa é energia bem usada</h2>
+      </div>
+      <p class="faixa-texto">
+        Economizar energia ajuda o planeta e ainda deixa a conta de luz mais leve. E o melhor: dá pra começar hoje, sem gastar nada.
+      </p>
+    </section>
+
+    <section class="secao">
+      <h2>Pequenos hábitos, grande economia</h2>
+
+      <div class="lista-cards">
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">💡</div>
+        <div class="conteudo">
+          <span class="etiqueta">Iluminação</span>
+          <h3>Lâmpada de LED</h3>
+          <p>Gasta bem menos energia que as lâmpadas antigas e dura muito mais tempo.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🌞</div>
+        <div class="conteudo">
+          <span class="etiqueta">Iluminação</span>
+          <h3>Aproveite a luz do dia</h3>
+          <p>Abra cortinas e janelas. Durante o dia, quase sempre dá para deixar a lâmpada apagada.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🔌</div>
+        <div class="conteudo">
+          <span class="etiqueta">Aparelhos</span>
+          <h3>Tire da tomada</h3>
+          <p>Aparelhos em modo de espera continuam consumindo energia. Desligue da tomada o que não está usando.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">❄️</div>
+        <div class="conteudo">
+          <span class="etiqueta">Cozinha</span>
+          <h3>Geladeira sem frestas</h3>
+          <p>Não deixe a porta aberta à toa e confira se a borracha está vedando bem.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">🚿</div>
+        <div class="conteudo">
+          <span class="etiqueta">Banheiro</span>
+          <h3>Chuveiro no modo verão</h3>
+          <p>Nos dias quentes, a posição verão gasta bem menos energia que a inverno.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="icone" aria-hidden="true">☀️</div>
+        <div class="conteudo">
+          <span class="etiqueta">Fontes limpas</span>
+          <h3>Energia que vem do sol</h3>
+          <p>A energia solar é limpa e renovável. Cada vez mais casas e empresas estão usando painéis solares.</p>
+        </div>
+      </article>
+
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Quantos desses você já faz?</h2>
+
+      <div class="caixa">
+        <p>Marque os hábitos que já fazem parte da sua rotina:</p>
+
+        <fieldset class="checklist">
+          <legend class="resultado">Meus hábitos</legend>
+          <label><input type="checkbox" class="habito"> Apago a luz quando saio do cômodo</label>
+          <label><input type="checkbox" class="habito"> Uso lâmpadas de LED</label>
+          <label><input type="checkbox" class="habito"> Tiro os aparelhos da tomada</label>
+          <label><input type="checkbox" class="habito"> Aproveito a luz natural</label>
+          <label><input type="checkbox" class="habito"> Não deixo a geladeira aberta à toa</label>
+        </fieldset>
+
+        <p class="resultado" id="resultadoHabitos" aria-live="polite">Você marcou 0 de 5. Bora começar? 🌱</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Sustentabilidade para Todos - Pequena ação, Grande impacto</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>

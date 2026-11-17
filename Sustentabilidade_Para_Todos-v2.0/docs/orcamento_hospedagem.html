@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento de hospedagem - Sustentabilidade para Todos</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      color: #f1e8e4;
+      font-size: 17px;
+      text-align: left;
+    }
+
+    th,
+    td {
+      border: 1px solid #a8d5a2;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #634a40;
+      color: #ffffff;
+    }
+
+    .caixa li a {
+      color: #c8e6c4;
+    }
+
+    .faixa-titulo h1 {
+      color: #3fa9f5;
+      font-size: 34px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main id="conteudo">
+
+    <section class="faixa-verde">
+      <div class="faixa-titulo">
+        <h1>Orçamento de hospedagem</h1>
+      </div>
+      <p class="faixa-texto">Onde o site está publicado, por que escolhemos essa opção e quanto custaria.</p>
+    </section>
+
+    <section class="secao">
+      <div class="caixa">
+        <h2>Comparação das opções</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Plataforma</th>
+              <th scope="col">Custo para este site</th>
+              <th scope="col">HTTPS</th>
+              <th scope="col">Observação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Railway ✅ escolhida</th>
+              <td>Plano Free: US$ 0 (crédito de US$ 1 por mês). Plano Hobby: US$ 5 por mês (inclui US$ 5 de uso)</td>
+              <td>Sim, automático</td>
+              <td>Roda o <code>server.js</code> com o <code>Dockerfile</code> do projeto e publica de novo a cada push no GitHub</td>
+            </tr>
+            <tr>
+              <th scope="row">GitHub Pages</th>
+              <td>R$ 0 (grátis para repositório público)</td>
+              <td>Sim, automático</td>
+              <td>Ótimo para site estático. Fica como plano B se o Railway sair do ar</td>
+            </tr>
+            <tr>
+              <th scope="row">Vercel ou Netlify</th>
+              <td>Plano gratuito para projetos pessoais</td>
+              <td>Sim, automático</td>
+              <td>Também serviriam, mas exigem conta e configuração em mais um serviço</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Por que escolhemos o Railway</h2>
+        <ul class="texto-esquerda">
+          <li><strong>Já estava pronto no projeto:</strong> o <code>Dockerfile</code>, o <code>server.js</code> e o <code>railway.toml</code> deixam o site rodando do mesmo jeito no computador e na internet.</li>
+          <li><strong>HTTPS automático</strong>, como pede o roteiro: <a href="https://sustentabilidadeparatodos.up.railway.app/">sustentabilidadeparatodos.up.railway.app</a>.</li>
+          <li><strong>Ligado ao GitHub:</strong> cada push na branch <code>main</code> publica a nova versão.</li>
+          <li><strong>Pensando no futuro:</strong> por ter um servidor Node, dá para enviar os formulários por e-mail de verdade, coisa que um site só estático não faz.</li>
+        </ul>
+
+        <h2>Quanto custa</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Por mês</th>
+              <th scope="col">Por ano</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Railway plano Free (cenário atual, site pequeno)</td>
+              <td>US$ 0</td>
+              <td>US$ 0</td>
+            </tr>
+            <tr>
+              <td>Railway plano Hobby (se o crédito grátis acabar ou o site crescer)</td>
+              <td>US$ 5</td>
+              <td>US$ 60</td>
+            </tr>
+            <tr>
+              <td>Domínio próprio <code>.com.br</code> no Registro.br (opcional)</td>
+              <td>—</td>
+              <td>R$ 40</td>
+            </tr>
+            <tr>
+              <th scope="row">Total</th>
+              <td colspan="2"><strong>De R$ 0 (hoje) até US$ 60 + R$ 40 por ano (Hobby com domínio próprio)</strong></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Plano B sem custo: o mesmo site funciona no GitHub Pages, porque é todo feito em HTML, CSS e JavaScript.</p>
+
+        <h2>Fontes (consultadas em 11/11/2026)</h2>
+        <ul class="texto-esquerda">
+          <li><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https">GitHub Docs: GitHub Pages e HTTPS</a></li>
+          <li><a href="https://docs.railway.com/reference/pricing">Railway: planos e preços</a></li>
+          <li><a href="https://teletime.com.br/14/10/2026/br-6-milhoes/">Teletime: registro de domínio .br custa R$ 40 por ano</a></li>
+        </ul>
+
+        <p><a class="botao" href="../index.html">← Voltar para o site</a></p>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
